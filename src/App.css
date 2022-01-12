@@ -18,6 +18,12 @@ html {
   --light-bg:#FAFBFC;
 }
 
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
@@ -29,9 +35,12 @@ body {
 
 /* General styles */
 
-.app{
+.App{
   width: 100%;
-  max-width: 775px;
+  max-width: 955px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* HERO */
@@ -40,23 +49,31 @@ body {
   padding: 0 3%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: flex-start;
   justify-content: center;
-  gap:20px;
+  gap:25px;
   height: 100vh;
 }
 
+.headline{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero-title {
-  font-size:4rem;
-  color: var(--dark-text);
   line-height: 100%;
+  font-size:4rem;
+  font-weight: 900;
+  color: var(--dark-text);
+  max-width: 300px;
 }
 
 .gradient {
   color: var(--gradient);
   background: var(--gradient);
   font-style: italic;
-  margin-top:-15px;
+  line-height: 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -65,6 +82,12 @@ body {
   color: var(--dark-text);
   font-size: 1.6rem;
   line-height: 125%;
+  max-width: 300px;
+}
+
+.hero-subtitle-italic{
+  font-style: italic;
+  font-weight: 700;
 }
 
 .hero-buttons{
@@ -139,20 +162,28 @@ button {
 }
 
 
-@media screen and (min-width:560px) {
-  .hero {
+@media screen and (min-width:600px) {
+  .App{
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
+  .hero {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-title,.gradient{
+    max-width: 100%;
+  }
+
   .hero-subtitle{
-    max-width: 500px;
+    max-width: 100%;
   }
 }
 
-@media screen and (min-width:810px) {
-  
-
+@media screen and (min-width:900px) {
   .hero-title {
-    font-size: 5.4rem;
+    font-size: 6.4rem;
     color: var(--dark-text);
     line-height: 100%;
   }
@@ -161,7 +192,7 @@ button {
     color: var(--dark-text);
     font-size: 2.4rem;
     line-height: 125%;
-    max-width: 100%;
+    /* max-width: 100%; */
   }
   
   .hero-buttons{
