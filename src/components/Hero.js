@@ -14,7 +14,7 @@ function Hero() {
         digital experiences.
       </p>
       <section className="hero-buttons">
-        <PrimaryButton>View work</PrimaryButton>
+        <PrimaryButton>View projects</PrimaryButton>
         <SecondaryButton>Get in touch</SecondaryButton>
       </section>
     </section>

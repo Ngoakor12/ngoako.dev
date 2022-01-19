@@ -13,12 +13,14 @@ html {
 :root {
   --gradient: linear-gradient(265.6deg, #007fff -21.43%, #0059b2 100%);
   --primary-blue: #007fff;
-  --secondary-blue:#0059b2;
-  --dark-text:#001E3C;
-  --light-bg:#FAFBFC;
+  --secondary-blue: #0059b2;
+  --dark-text: #001e3c;
+  --light-bg: #fafbfc;
+  --technologies-bg: rgba(102, 178, 255, 0.3);
+  --project-border: #aab4be;
 }
 
-#root{
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,13 +34,13 @@ body {
   /* margin: 5%; */
 }
 
-
 /* General styles */
 
-.App{
+.App {
   width: 100%;
   max-width: 955px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -51,11 +53,11 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap:25px;
+  gap: 25px;
   height: 100vh;
 }
 
-.headline{
+.headline {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +65,7 @@ body {
 
 .hero-title {
   line-height: 100%;
-  font-size:4rem;
+  font-size: 4rem;
   font-weight: 900;
   color: var(--dark-text);
   max-width: 300px;
@@ -85,14 +87,14 @@ body {
   max-width: 300px;
 }
 
-.hero-subtitle-italic{
+.hero-subtitle-italic {
   font-style: italic;
   font-weight: 700;
 }
 
-.hero-buttons{
+.hero-buttons {
   display: flex;
-  gap:10px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -103,8 +105,9 @@ button {
 .primary-btn {
   background: var(--gradient);
   border-radius: 8px;
+  padding: 0;
   padding: 1em 2.5rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 125%;
   color: white;
@@ -118,52 +121,144 @@ button {
   box-sizing: border-box;
   border-radius: 8px;
   padding: 1em 2.5rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 125%;
   color: var(--primary-blue);
-  
 }
 
-.primary-btn:hover{
+.project-btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.secondary-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.live-btn,
+.code-btn {
+  color: var(--dark-text);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.live-btn:hover,
+.code-btn:hover {
+  color: var(--secondary-blue);
+  background-color: var(--light-bg);
+}
+
+.primary-btn:hover {
   cursor: pointer;
   background: var(--secondary-blue);
   /* outline: 2px solid var(--secondary-blue); */
 }
 
-.secondary-btn:hover{
+.secondary-btn:hover {
   cursor: pointer;
   color: var(--secondary-blue);
   outline: 2px solid var(--secondary-blue);
   outline-offset: -2px;
 }
 
-.primary-btn:focus-visible{
+.primary-btn:focus-visible {
   cursor: pointer;
   /* background: var(--secondary-blue); */
   outline: 3px solid var(--primary-blue);
-  
 }
 
-.secondary-btn:focus-visible{
+.secondary-btn:focus-visible {
   cursor: pointer;
   outline: 5px solid var(--primary-blue);
   outline-offset: -2px;
   /* outline: 2px solid var(--primary-blue); */
   /* border: 2px solid var(--primary-blue); */
-
 }
 
-.primary-btn,.secondary-btn{
+.primary-btn,
+.secondary-btn {
   transform-origin: center;
 }
-.primary-btn:active,.secondary-btn:active{
+.primary-btn:active,
+.secondary-btn:active {
   transform: scale(97%);
 }
 
+/* PROJECTS */
+.projects {
+  color: var(--dark-text);
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding-top: 70px;
+}
 
-@media screen and (min-width:600px) {
-  .App{
+.projects-header-title {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-bottom: 12px;
+}
+
+.projects-header-description {
+  line-height: 180%;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--project-border);
+  border-radius: 8px;
+  padding: 20px;
+  gap: 20px;
+  background-color: white;
+}
+
+.project-picture {
+  width: 100%;
+  height: 20rem;
+  background-color: var(--dark-text);
+  border-radius: 8px;
+}
+
+.project-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.technologies {
+  display: flex;
+  gap: 10px;
+}
+
+.technology {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--technologies-bg);
+  border-radius: 22px;
+}
+
+@media screen and (min-width: 600px) {
+  .App {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,16 +267,17 @@ button {
     align-items: center;
     text-align: center;
   }
-  .hero-title,.gradient{
+  .hero-title,
+  .gradient {
     max-width: 100%;
   }
 
-  .hero-subtitle{
+  .hero-subtitle {
     max-width: 100%;
   }
 }
 
-@media screen and (min-width:900px) {
+@media screen and (min-width: 900px) {
   .hero-title {
     font-size: 6.4rem;
     color: var(--dark-text);
@@ -194,17 +290,20 @@ button {
     line-height: 125%;
     /* max-width: 100%; */
   }
-  
-  .hero-buttons{
+
+  .hero-buttons {
     display: flex;
-    gap:20px
+    gap: 20px;
   }
-  
+
   button {
     border: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
   }
-  
+
   .primary-btn {
+    font-family: "Inter", sans-serif;
     background: var(--gradient);
     border-radius: 8px;
     padding: 1em 2.5rem;
@@ -213,8 +312,9 @@ button {
     line-height: 125%;
     color: white;
   }
-  
+
   .secondary-btn {
+    font-family: "Inter", sans-serif;
     background: none;
     /* border: 2px solid #007FFF; */
     outline: 2px solid var(--primary-blue);
@@ -226,7 +326,4 @@ button {
     font-weight: 700;
     line-height: 125%;
   }
-  
-  
 }
-
