@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <Hero />
+      {/* <hr className="horizontal-line"/> */}
       <Projects />
     </div>
   );

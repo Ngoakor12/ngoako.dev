@@ -45,6 +45,11 @@ body {
   justify-content: center;
 }
 
+.horizontal-line {
+  align-self: flex-end;
+  width: 100%;
+}
+
 /* HERO */
 
 .hero {
@@ -68,7 +73,7 @@ body {
   font-size: 4rem;
   font-weight: 900;
   color: var(--dark-text);
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .gradient {
@@ -145,13 +150,25 @@ button {
   background: transparent;
   cursor: pointer;
   border-radius: 8px;
-  padding: 10px;
+  padding: 8px;
 }
 
 .live-btn:hover,
 .code-btn:hover {
   color: var(--secondary-blue);
   background-color: var(--light-bg);
+}
+
+.live-btn:focus-visible,
+.code-btn:focus-visible {
+  outline: 3px solid var(--primary-blue);
+  /* background-color: var(--light-bg); */
+}
+
+.live-btn:active,
+.code-btn:active {
+  transform: scale(96%);
+  transform-origin: center;
 }
 
 .primary-btn:hover {
@@ -200,6 +217,10 @@ button {
   padding-top: 70px;
 }
 
+.projects-header {
+  max-width: 300px;
+}
+
 .projects-header-title {
   font-size: 3rem;
   font-weight: 700;
@@ -224,6 +245,16 @@ button {
   padding: 20px;
   gap: 20px;
   background-color: white;
+  max-width: 350px;
+}
+
+.project:hover {
+  border: 1px solid #ffffff;
+  outline: 3px solid var(--secondary-blue);
+}
+
+.project:hover .project-title {
+  color: var(--secondary-blue);
 }
 
 .project-picture {
@@ -275,6 +306,19 @@ button {
   .hero-subtitle {
     max-width: 100%;
   }
+
+  .projects {
+    /* max-width: 100%; */
+    align-items: center;
+  }
+  .project {
+    max-width: 100%;
+    /* align-items: center; */
+  }
+  .projects-header {
+    text-align: center;
+    max-width: 400px;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -325,5 +369,45 @@ button {
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 125%;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .projects {
+    align-items: center;
+    gap: 70px;
+  }
+
+  .projects-header {
+    text-align: center;
+    max-width: 428px;
+  }
+  .projects-header-title {
+    font-size: 4.8rem;
+  }
+  .projects-header-description {
+    font-size: 1.8rem;
+    line-height: 160%;
+  }
+
+  .project {
+    gap: 27px;
+    padding: 30px;
+  }
+
+  .project-list {
+    gap: 50px;
+  }
+
+  .project-picture {
+    min-width: 435px;
+    height: 100%;
+  }
+
+  .project-details-wrapper {
+    min-width: 435px;
   }
 }
