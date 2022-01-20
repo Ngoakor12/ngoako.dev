@@ -5,21 +5,21 @@ const projects = [
     coverImg: "",
     title: "Coding Resource Finder 1",
     description:
-      "A picture matching game to keep your memory sharp. A picture matching game to keep your memory sharp.",
+      "An easier way to find coding related topics and projects on the ACN syllabus.",
     technologies: ["React", "JavaScript", "HTML", "CSS"],
   },
   {
     coverImg: "",
     title: "Coding Resource Finder 2",
     description:
-      "A picture matching game to keep your memory sharp. A picture matching game to keep your memory sharp.",
+      "An easier way to find coding related topics and projects on the ACN syllabus.",
     technologies: ["React", "JavaScript", "HTML", "CSS"],
   },
   {
     coverImg: "",
     title: "Coding Resource Finder 3",
     description:
-      "A picture matching game to keep your memory sharp. A picture matching game to keep your memory sharp.",
+      "An easier way to find coding related topics and projects on the ACN syllabus.",
     technologies: ["React", "JavaScript", "HTML", "CSS"],
   },
 ];
