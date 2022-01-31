@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./components/About";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 
@@ -8,6 +9,8 @@ function App() {
       <Hero />
       <hr className="horizontal-line"/>
       <Projects />
+      <hr className="horizontal-line"/>
+      <About/>
     </div>
   );
 }
