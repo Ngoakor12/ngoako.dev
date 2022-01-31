@@ -217,7 +217,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding-top: 70px;
+  padding: 70px 0;
   max-width: 955px;
 }
 
@@ -225,7 +225,8 @@ button {
   max-width: 300px;
 }
 
-.projects-header-title {
+.projects-header-title,
+.about-header-title {
   font-size: 3rem;
   font-weight: 700;
   padding-bottom: 12px;
@@ -261,7 +262,8 @@ button {
   color: var(--secondary-blue);
 }
 
-.project-picture {
+.project-picture,
+.about-picture {
   width: 100%;
   height: 20rem;
   background-color: var(--dark-text);
@@ -292,6 +294,32 @@ button {
   border-radius: 22px;
 }
 
+/* ABOUT */
+
+.about {
+  color: var(--dark-text);
+  display: flex;
+  flex-direction: column;
+  max-width: 955px;
+  padding: 70px 0;
+  gap: 20px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 350px;
+}
+
+.about-body {
+}
+
+.about-text {
+  line-height: 180%;
+  padding-bottom: 25px;
+}
+
 @media screen and (min-width: 600px) {
   .App {
     display: flex;
@@ -311,17 +339,20 @@ button {
     max-width: 100%;
   }
 
-  .projects {
-    /* max-width: 100%; */
+  .projects,
+  .about {
     align-items: center;
   }
   .project {
     max-width: 100%;
-    /* align-items: center; */
   }
   .projects-header {
     text-align: center;
     max-width: 400px;
+  }
+
+  .about-content {
+    max-width: 80%;
   }
 }
 
@@ -336,7 +367,6 @@ button {
     color: var(--dark-text);
     font-size: 2.4rem;
     line-height: 125%;
-    /* max-width: 100%; */
   }
 
   .hero-buttons {
@@ -364,7 +394,6 @@ button {
   .secondary-btn {
     font-family: "Inter", sans-serif;
     background: none;
-    /* border: 2px solid #007FFF; */
     outline: 2px solid var(--primary-blue);
     outline-offset: -2px;
     box-sizing: border-box;
@@ -413,5 +442,39 @@ button {
 
   .project-details-wrapper {
     min-width: 435px;
+  }
+
+  .about {
+    align-items: center;
+    gap: 70px;
+    max-width: 955px;
+  }
+
+  .about-header-title {
+    font-size: 4.8rem;
+  }
+
+  .about-content {
+    flex-direction: row;
+    gap: 53px;
+    max-width: 100%;
+  }
+
+  .about-picture {
+    max-width: 478px;
+    min-width: 435px;
+    height: 300px;
+  }
+
+  .about-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-text {
+    max-width: 100%;
+    line-height: 180%;
+    font-size: 1.8rem;
   }
 }
