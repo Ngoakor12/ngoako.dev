@@ -114,7 +114,7 @@ button {
   background: var(--gradient);
   border-radius: 8px;
   padding: 0;
-  padding: 1em 2.5rem;
+  padding: 1.0rem 2.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 125%;
@@ -128,7 +128,7 @@ button {
   outline-offset: -2px;
   box-sizing: border-box;
   border-radius: 8px;
-  padding: 1em 2.5rem;
+  padding: 1.0rem 2.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 125%;
@@ -384,7 +384,7 @@ button {
     font-family: "Inter", sans-serif;
     background: var(--gradient);
     border-radius: 8px;
-    padding: 1em 2.5rem;
+    padding: 1.0rem 2.5rem;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 125%;
@@ -398,7 +398,7 @@ button {
     outline-offset: -2px;
     box-sizing: border-box;
     border-radius: 8px;
-    padding: 1em 2.5rem;
+    padding: 1.0rem 2.5rem;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 125%;
