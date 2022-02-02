@@ -47,7 +47,8 @@ body {
   justify-content: center;
 }
 
-.horizontal-line {
+.horizontal-line,
+.skill-separator {
   width: 100%;
   border: none;
   background-color: var(--project-border);
@@ -227,6 +228,10 @@ button {
   max-width: 300px;
 }
 
+.project-description {
+  line-height: 170%;
+}
+
 .projects-header-title,
 .about-header-title,
 .contact-header-title {
@@ -298,6 +303,74 @@ button {
   border-radius: 22px;
 }
 
+/* SKILLS */
+.skills {
+  color: var(--dark-text);
+  /* padding: 3%; */
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 70px 0;
+  max-width: 350px;
+}
+
+.skills-header-title {
+  font-size: 3rem;
+  padding-bottom: 12px;
+}
+
+.skills-header-description {
+  font-size: 1.8rem;
+  line-height: 180%;
+}
+
+.skills-technologies {
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  flex-wrap: wrap;
+}
+
+.skill-list-heading {
+  font-size: 2.4rem;
+  color: #ffffff;
+  background-color: var(--primary-blue);
+  padding: 24px 32px;
+  border-radius: 8px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  text-align: center;
+}
+
+.skill-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  /* max-width: 450px; */
+  /* min-width: 100%; */
+}
+
+.skills-list {
+  border: 1px solid var(--project-border);
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.skill {
+  /* border: 1px solid var(--project-border);
+  border-top: 0;
+  border-radius: 8px; */
+}
+
+.skill-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  gap: 14px;
+  padding: 24px 32px;
+}
+
 /* ABOUT */
 
 .about {
@@ -320,7 +393,7 @@ button {
 }
 
 .about-text {
-  line-height: 150%;
+  line-height: 180%;
   padding-bottom: 25px;
 }
 
@@ -340,6 +413,11 @@ button {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.contact-header-description {
+  font-size: 1.8rem;
+  line-height: 180%;
 }
 
 .contact-form-field {
@@ -418,7 +496,8 @@ button {
   }
 
   .projects,
-  .about {
+  .about,
+  .skill {
     align-items: center;
   }
   .project {
@@ -427,6 +506,14 @@ button {
   .projects-header {
     text-align: center;
     max-width: 400px;
+  }
+
+  .skills-technologies {
+    max-width: 100%;
+  }
+
+  .skills {
+    max-width: 80%;
   }
 
   .about-content {
@@ -497,7 +584,8 @@ button {
 
   .projects {
     align-items: center;
-    gap: 70px;
+    gap: 50px;
+    padding: 100px 0;
   }
 
   .projects-header {
@@ -509,7 +597,7 @@ button {
   }
   .projects-header-description {
     font-size: 1.8rem;
-    line-height: 160%;
+    line-height: 180%;
   }
 
   .project {
@@ -530,10 +618,44 @@ button {
     min-width: 435px;
   }
 
+  .skills {
+    max-width: 955px;
+    align-items: center;
+    padding: 100px 0;
+    gap: 50px;
+  }
+
+  .skills-header-title,
+  .skills-header-description {
+    text-align: center;
+    max-width: 483px;
+  }
+
+  .skills-header-title {
+    font-size: 4.8rem;
+  }
+
+  .skills-technologies {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* flex: 1 1; */
+  }
+
+  .skills-list {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex: 1 1; */
+  }
+
+  .skill {
+    min-width: 453px;
+  }
+
   .about {
     align-items: center;
-    gap: 70px;
+    gap: 50px;
     max-width: 955px;
+    padding: 100px 0;
   }
 
   .about-header-title {
@@ -566,6 +688,8 @@ button {
 
   .contact {
     max-width: 483px;
+    padding: 100px 0;
+    gap: 50px;
   }
 
   .contact-header-title {
