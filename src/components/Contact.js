@@ -19,10 +19,10 @@ function Contact() {
     });
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(form);
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   console.log(form);
+  // }
 
   return (
     <section className="contact">
@@ -34,7 +34,12 @@ function Contact() {
         </p>
       </header>
       {/* <section className="contact-content"> */}
-      <form id="contact-form" onSubmit={handleSubmit}>
+      <form
+        id="contact-form"
+        // onSubmit={handleSubmit}
+        action="https://formspree.io/f/xqknpbgw"
+        method="POST"
+      >
         <div className="contact-form-field">
           <label for="name">Your name</label>
           <input
@@ -43,6 +48,7 @@ function Contact() {
             value={form.name}
             id="name"
             onChange={handleChange}
+            required
           />
         </div>
         <div className="contact-form-field">
@@ -53,6 +59,7 @@ function Contact() {
             value={form.email}
             id="email"
             onChange={handleChange}
+            required
           />
         </div>
         <div className="contact-form-field">
@@ -62,6 +69,7 @@ function Contact() {
             name="message"
             value={form.message}
             onChange={handleChange}
+            required
           ></textarea>
         </div>
         <PrimaryButton type="submit">Send message</PrimaryButton>

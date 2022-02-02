@@ -383,7 +383,7 @@ button {
 .contact-form-field > input[type="text"]:focus,
 .contact-form-field > input[type="email"]:focus,
 .contact-form-field > textarea:focus {
-  border-color: transparent;
+  border-color: var(--secondary-blue);
   outline: 0;
   outline: 3px solid var(--primary-blue);
   background-color: #ffffff;
