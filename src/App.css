@@ -477,6 +477,33 @@ button {
   align-self: flex-end;
 }
 
+.footer {
+  padding: 70px 0;
+  max-width: 955px;
+  color: var(--dark-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-icon{
+  color: var(--dark-text);
+  padding:5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-icon:hover{
+  background-color: var(--technologies-bg);
+}
+
 @media screen and (min-width: 600px) {
   .App {
     display: flex;
