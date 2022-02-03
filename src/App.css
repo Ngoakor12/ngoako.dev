@@ -49,7 +49,7 @@ body {
 
 .horizontal-line,
 .skill-separator {
-  width: 100%;
+  min-width: 100%;
   border: none;
   background-color: var(--project-border);
   height: 1px;
@@ -156,13 +156,13 @@ button {
   background: transparent;
   cursor: pointer;
   border-radius: 8px;
-  padding: 8px;
+  padding: 5px 8px;
 }
 
 .live-btn:hover,
 .code-btn:hover {
   color: var(--secondary-blue);
-  background-color: var(--light-bg);
+  background-color: var(--technologies-bg);
 }
 
 .live-btn:focus-visible,
@@ -263,8 +263,8 @@ button {
 }
 
 .project:hover {
-  border: 1px solid #ffffff;
-  outline: 3px solid var(--secondary-blue);
+  border: 1px solid var(--secondary-blue);
+  /* outline: 3px solid var(--secondary-blue); */
 }
 
 .project:hover .project-title {
@@ -332,10 +332,12 @@ button {
 }
 
 .skill-list-heading {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   color: #ffffff;
   background-color: var(--primary-blue);
   padding: 24px 32px;
+  border: 1px solid var(--project-border);
+  border-bottom: 0;
   border-radius: 8px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -365,10 +367,13 @@ button {
 
 .skill-name {
   /* font-size: 1.8rem; */
+  border: 0;
+  border-radius: 8px;
   font-weight: 700;
   display: flex;
   gap: 14px;
   padding: 24px 32px;
+  background-color: #ffffff;
 }
 
 /* ABOUT */
