@@ -4,8 +4,8 @@ function CodeButton() {
       <svg
         aria-hidden="true"
         role="img"
-        width="32"
-        height="32"
+        width="28"
+        height="28"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 24 24"
       >

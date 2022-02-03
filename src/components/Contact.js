@@ -41,7 +41,7 @@ function Contact() {
         method="POST"
       >
         <div className="contact-form-field">
-          <label for="name">Your name</label>
+          <label htmlFor="name">Your name</label>
           <input
             type="text"
             name="name"
@@ -52,7 +52,7 @@ function Contact() {
           />
         </div>
         <div className="contact-form-field">
-          <label for="email">Your email</label>
+          <label htmlFor="email">Your email</label>
           <input
             type="email"
             name="email"
@@ -63,7 +63,7 @@ function Contact() {
           />
         </div>
         <div className="contact-form-field">
-          <label for="message">Message</label>
+          <label htmlFor="message">Message</label>
           <textarea
             id="message"
             name="message"
