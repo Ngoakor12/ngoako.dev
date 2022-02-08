@@ -11,12 +11,12 @@ function Navigation() {
     <header className="nav-wrapper">
       {/* Menu for smaller screens */}
       <div className={`${isMenuOpen ? "menu-open" : "menu-closed"}`}>
-        <a href="#" className="active-nav">
+        <a href="/" className="active-nav">
           Home
         </a>
-        <a href="#">Projects</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="/">Projects</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
       </div>
       <nav className="nav">
         <div className="menu" onClick={toggleMenu}>
@@ -57,16 +57,16 @@ function Navigation() {
           )}
         </div>
         <div className={`main-nav`}>
-          <a href="#" className="active-nav">
+          <a href="/" className="active-nav">
             Home
           </a>
-          <a href="#">Projects</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a href="/">Projects</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
         </div>
         <div className="secondary-nav">
           <div className="contact-options">
-            <a href="#">
+            <a href="/">
               <svg
                 //   xmlns="http://www.w3.org/2000/svg"
                 //   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -90,7 +90,7 @@ function Navigation() {
                 ></path>
               </svg>
             </a>
-            <a href="#">
+            <a href="/">
               <svg
                 //   xmlns="http://www.w3.org/2000/svg"
                 //   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -108,7 +108,7 @@ function Navigation() {
                 ></path>
               </svg>
             </a>
-            <a href="#">
+            <a href="/">
               <svg
                 //   xmlns="http://www.w3.org/2000/svg"
                 //   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -129,7 +129,7 @@ function Navigation() {
               </svg>
             </a>
           </div>
-          <a href="#" className="darkmode-toggle">
+          <a href="/" className="darkmode-toggle">
             <svg
               // xmlns="http://www.w3.org/2000/svg"
               // xmlns:xlink="http://www.w3.org/1999/xlink"
