@@ -1,9 +1,65 @@
+import { useState } from "react";
+
 function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function toggleMenu() {
+    setIsMenuOpen((prevState) => !prevState);
+  }
+
   return (
     <header className="nav-wrapper">
+      {/* Menu for smaller screens */}
+      <div className={`${isMenuOpen ? "menu-open" : "menu-closed"}`}>
+        <a href="#" className="active-nav">
+          Home
+        </a>
+        <a href="#">Projects</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
       <nav className="nav">
-        <div className="main-nav">
-          <a href="#" className="active-nav">Home</a>
+        <div className="menu" onClick={toggleMenu}>
+          {isMenuOpen ? (
+            <svg
+              // xmlns="http://www.w3.org/2000/svg"
+              // xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              // class="iconify iconify--mdi"
+              width="32"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          ) : (
+            <svg
+              // xmlns="http://www.w3.org/2000/svg"
+              // xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              // class="iconify iconify--bx"
+              width="32"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          )}
+        </div>
+        <div className={`main-nav`}>
+          <a href="#" className="active-nav">
+            Home
+          </a>
           <a href="#">Projects</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
