@@ -84,12 +84,27 @@ body {
   top: 65px;
 }
 
+.left-menu {
+  display: flex;
+  gap: 5px;
+}
+
+.home {
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.home a {
+  color: var(--dark-text);
+}
+
 .menu {
   padding: 2px 5px;
   border-radius: 8px;
 }
 
-.menu:hover {
+.menu:hover,
+.home:hover {
   background-color: var(--technologies-bg);
 }
 
@@ -758,7 +773,7 @@ button {
     top: 65px;
   }
 
-  .menu {
+  .left-menu {
     display: none;
   }
 
