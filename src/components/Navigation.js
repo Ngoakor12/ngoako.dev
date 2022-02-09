@@ -90,7 +90,11 @@ function Navigation() {
         </div>
         <div className="secondary-nav">
           <div className="contact-options">
-            <a href="/">
+            <a
+              href="https://www.linkedin.com/in/ngoako-ramokgopa-07b65012a/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <svg
                 //   xmlns="http://www.w3.org/2000/svg"
                 //   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -114,7 +118,11 @@ function Navigation() {
                 ></path>
               </svg>
             </a>
-            <a href="/">
+            <a
+              href="mailto:ngoakor12@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <svg
                 //   xmlns="http://www.w3.org/2000/svg"
                 //   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -132,7 +140,11 @@ function Navigation() {
                 ></path>
               </svg>
             </a>
-            <a href="/">
+            <a
+              href="https://github.com/Ngoakor12"
+              target="_blank"
+              rel="noreferrer"
+            >
               <svg
                 //   xmlns="http://www.w3.org/2000/svg"
                 //   xmlns:xlink="http://www.w3.org/1999/xlink"
