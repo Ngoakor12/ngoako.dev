@@ -19,42 +19,66 @@ function Navigation() {
         <a href="/">Contact</a>
       </div>
       <nav className="nav">
-        <div className="menu" onClick={toggleMenu}>
-          {isMenuOpen ? (
-            <svg
-              // xmlns="http://www.w3.org/2000/svg"
-              // xmlns:xlink="http://www.w3.org/1999/xlink"
-              aria-hidden="true"
-              role="img"
-              // class="iconify iconify--mdi"
-              width="32"
-              height="32"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          ) : (
-            <svg
-              // xmlns="http://www.w3.org/2000/svg"
-              // xmlns:xlink="http://www.w3.org/1999/xlink"
-              aria-hidden="true"
-              role="img"
-              // class="iconify iconify--bx"
-              width="32"
-              height="32"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          )}
+        <div className="left-menu">
+          <div className="menu" onClick={toggleMenu}>
+            {isMenuOpen ? (
+              <>
+                <svg
+                  // xmlns="http://www.w3.org/2000/svg"
+                  // xmlns:xlink="http://www.w3.org/1999/xlink"
+                  aria-hidden="true"
+                  role="img"
+                  // class="iconify iconify--mdi"
+                  width="32"
+                  height="32"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </>
+            ) : (
+              <svg
+                // xmlns="http://www.w3.org/2000/svg"
+                // xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                // class="iconify iconify--bx"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            )}
+          </div>
+          <div className="home">
+            <a href="/">
+              <svg
+                // xmlns="http://www.w3.org/2000/svg"
+                // xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                // class="iconify iconify--bx"
+                width="30"
+                height="30"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59l7-7l7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </a>
+          </div>
         </div>
         <div className={`main-nav`}>
           <a href="/" className="active-nav">

@@ -84,12 +84,27 @@ body {
   top: 65px;
 }
 
+.left-menu {
+  display: flex;
+  gap: 5px;
+}
+
+.home {
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.home a {
+  color: var(--dark-text);
+}
+
 .menu {
   padding: 2px 5px;
   border-radius: 8px;
 }
 
-.menu:hover {
+.menu:hover,
+.home:hover {
   background-color: var(--technologies-bg);
 }
 
@@ -526,7 +541,6 @@ button {
 }
 
 .skill-name {
-  /* font-size: 1.8rem; */
   border: 0;
   border-radius: 8px;
   font-weight: 700;
@@ -534,6 +548,7 @@ button {
   gap: 14px;
   padding: 24px 32px;
   background-color: #ffffff;
+  max-height: 70px;
 }
 
 /* ABOUT */
@@ -758,7 +773,7 @@ button {
     top: 65px;
   }
 
-  .menu {
+  .left-menu {
     display: none;
   }
 

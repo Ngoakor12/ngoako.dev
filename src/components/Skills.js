@@ -1,23 +1,5 @@
 import SkillsList from "./SkillsList";
-
-const skillsData = {
-  frontend: [
-    { name: "HTML", icon: "😉" },
-    { name: "CSS", icon: "😉" },
-    { name: "JavaScript", icon: "😉" },
-    { name: "ReactJS", icon: "😉" },
-  ],
-  backend: [
-    { name: "NodeJS(Express)", icon: "😉" },
-    { name: "Firebase", icon: "😉" },
-    { name: "Postgresql", icon: "😉" },
-  ],
-  other: [
-    { name: "Figma", icon: "😉" },
-    { name: "Git(Github)", icon: "😉" },
-    { name: "Unit testing", icon: "😉" },
-  ],
-};
+import  skillsData  from "../skills-data";
 
 function Skills() {
   return (
