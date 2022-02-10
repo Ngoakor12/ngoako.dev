@@ -1,4 +1,4 @@
-import ProjectButtons from "./ProjectButtons";
+import ProjectDetailsButtons from "./ProjectDetailsButtons";
 
 function Project({ projectData }) {
   return (
@@ -18,7 +18,7 @@ function Project({ projectData }) {
             );
           })}
         </article>
-        <ProjectButtons project={projectData}/>
+        <ProjectDetailsButtons project={projectData}/>
       </div>
     </article>
   );

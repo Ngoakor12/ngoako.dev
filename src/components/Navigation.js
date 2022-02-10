@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,12 +82,16 @@ function Navigation() {
           </div>
         </div>
         <div className={`main-nav`}>
-          <a href="/" className="active-nav">
+          <Link to="/" className="active-nav">
             Home
-          </a>
+          </Link>
+          <Link to="/projects">Projects</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          {/* <a href="/" className="active-nav">Home</a>
           <a href="/">Projects</a>
           <a href="/">About</a>
-          <a href="/">Contact</a>
+          <a href="/">Contact</a> */}
         </div>
         <div className="secondary-nav">
           <div className="contact-options">
