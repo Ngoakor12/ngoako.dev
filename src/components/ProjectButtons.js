@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PrimaryButton from "./PrimaryButton";
 import LiveButton from "./LiveButton";
 import CodeButton from "./CodeButton";
 
 function ProjectButtons({ project }) {
+  const { pathname } = useLocation();
   return (
     <article className="project-btns">
       <PrimaryButton>
-        <Link to={`projects/${project.slug}`}>View project</Link>
+        <Link to={`${pathname === "/" ? "projects/" : ""}${project.slug}`}>
+          View project
+        </Link>
       </PrimaryButton>
       <div className="secondary-btns">
         <LiveButton>

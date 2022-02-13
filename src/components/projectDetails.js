@@ -1,6 +1,4 @@
 import { useParams } from "react-router-dom";
-import Navigation from "./Navigation";
-import ProjectDetailsProject from "./projectDetailsProject";
 
 function ProjectDetails({ projects }) {
   const { projectSlug } = useParams();
@@ -8,8 +6,15 @@ function ProjectDetails({ projects }) {
   return (
     <>
       {/* <Navigation /> */}
-      <ProjectDetailsProject projectData={project} />
+      <project projectData={project} />
       <section>
+        <h1>Hello world from {project.title}</h1>
+        <h1>Hello world from {project.title}</h1>
+        <h1>Hello world from {project.title}</h1>
+        <h1>Hello world from {project.title}</h1>
+        <h1>Hello world from {project.title}</h1>
+        <h1>Hello world from {project.title}</h1>
+        <h1>Hello world from {project.title}</h1>
         <h1>Hello world from {project.title}</h1>
       </section>
     </>

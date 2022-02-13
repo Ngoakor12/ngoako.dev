@@ -47,7 +47,7 @@ function App() {
           path="/projects/:projectSlug"
           element={
             <>
-              <ProjectDetails projects={projects}/>
+              <ProjectDetails projects={projects} />
               <hr className="horizontal-line" />
             </>
           }
@@ -58,7 +58,7 @@ function App() {
             <>
               <About />
               <hr className="horizontal-line" />
-              <Skills/>
+              <Skills />
               <hr className="horizontal-line" />
             </>
           }
