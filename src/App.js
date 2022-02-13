@@ -44,7 +44,7 @@ function App() {
           }
         />
         <Route
-          path="/projects/:projectSlug"
+          path="/projects/:slug"
           element={
             <>
               <ProjectDetails projects={projects} />

@@ -1,23 +1,52 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, matchPath, useLocation } from "react-router-dom";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  // const match = useMatch();
 
   function toggleMenu() {
     setIsMenuOpen((prevState) => !prevState);
   }
 
+  // let isActive = false;
+  // if (location.pathname === `${matchPath}/props-v-state`) {
+  //   isActive = true;
+  // }
+
   return (
     <header className="nav-wrapper">
       {/* Menu for smaller screens */}
       <div className={`${isMenuOpen ? "menu-open" : "menu-closed"}`}>
-        <a href="/" className="active-nav">
-          Home
-        </a>
-        <a href="/">Projects</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
+      <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+            onClick={toggleMenu}
+            >
+            Home
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+            onClick={toggleMenu}
+            >
+            Projects
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+            onClick={toggleMenu}
+            >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+            onClick={toggleMenu}
+            >
+            Contact
+          </NavLink>
       </div>
       <nav className="nav">
         <div className="left-menu">
@@ -82,12 +111,30 @@ function Navigation() {
           </div>
         </div>
         <div className={`main-nav`}>
-          <Link to="/" className="active-nav">
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+          >
             Home
-          </Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+          >
+            Projects
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+          >
+            Contact
+          </NavLink>
           {/* <a href="/" className="active-nav">Home</a>
           <a href="/">Projects</a>
           <a href="/">About</a>
