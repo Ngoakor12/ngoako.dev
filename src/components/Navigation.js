@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {  NavLink } from "react-router-dom";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,12 +12,34 @@ function Navigation() {
     <header className="nav-wrapper">
       {/* Menu for smaller screens */}
       <div className={`${isMenuOpen ? "menu-open" : "menu-closed"}`}>
-        <a href="/" className="active-nav">
-          Home
-        </a>
-        <a href="/">Projects</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
+      <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+            onClick={toggleMenu}
+            >
+            Home
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+            onClick={toggleMenu}
+            >
+            Projects
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+            onClick={toggleMenu}
+            >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+            onClick={toggleMenu}
+            >
+            Contact
+          </NavLink>
       </div>
       <nav className="nav">
         <div className="left-menu">
@@ -81,12 +104,34 @@ function Navigation() {
           </div>
         </div>
         <div className={`main-nav`}>
-          <a href="/" className="active-nav">
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+          >
             Home
-          </a>
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+          >
+            Projects
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "active-nav" : "")}
+          >
+            Contact
+          </NavLink>
+          {/* <a href="/" className="active-nav">Home</a>
           <a href="/">Projects</a>
           <a href="/">About</a>
-          <a href="/">Contact</a>
+          <a href="/">Contact</a> */}
         </div>
         <div className="secondary-nav">
           <div className="contact-options">

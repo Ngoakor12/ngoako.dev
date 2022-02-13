@@ -18,7 +18,7 @@ function Project({ projectData }) {
             );
           })}
         </article>
-        <ProjectButtons />
+        <ProjectButtons project={projectData}/>
       </div>
     </article>
   );
