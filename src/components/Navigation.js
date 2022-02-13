@@ -1,19 +1,12 @@
 import { useState } from "react";
-import { Link, NavLink, matchPath, useLocation } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  // const match = useMatch();
 
   function toggleMenu() {
     setIsMenuOpen((prevState) => !prevState);
   }
-
-  // let isActive = false;
-  // if (location.pathname === `${matchPath}/props-v-state`) {
-  //   isActive = true;
-  // }
 
   return (
     <header className="nav-wrapper">
