@@ -146,8 +146,8 @@ function Navigation() {
                 aria-hidden="true"
                 role="img"
                 //   class="iconify iconify--bx"
-                width="26"
-                height="26"
+                width="24"
+                height="24"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -174,8 +174,8 @@ function Navigation() {
                 aria-hidden="true"
                 role="img"
                 //   class="iconify iconify--bx"
-                width="26"
-                height="26"
+                width="24"
+                height="24"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -196,8 +196,8 @@ function Navigation() {
                 aria-hidden="true"
                 role="img"
                 //   class="iconify iconify--bx"
-                width="26"
-                height="26"
+                width="24"
+                height="24"
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 24 24"
               >
@@ -217,8 +217,8 @@ function Navigation() {
               aria-hidden="true"
               role="img"
               // class="iconify iconify--bx"
-              width="26"
-              height="26"
+              width="24"
+              height="24"
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 24 24"
             >

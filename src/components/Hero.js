@@ -1,6 +1,3 @@
-import PrimaryButton from "./PrimaryButton";
-import SecondaryButton from "./SecondaryButton";
-
 function Hero() {
   return (
     <section className="hero">
@@ -14,8 +11,12 @@ function Hero() {
         digital experiences.
       </p>
       <section className="hero-buttons">
-        <PrimaryButton>View projects</PrimaryButton>
-        <SecondaryButton>Get in touch</SecondaryButton>
+        <a href="#projects" className="primary-btn">
+          View projects
+        </a>
+        <a href="#contact" className="secondary-btn">
+          Get in touch
+        </a>
       </section>
     </section>
   );
