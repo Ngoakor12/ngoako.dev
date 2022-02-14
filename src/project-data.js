@@ -7,8 +7,8 @@ const projects = [
       "An easier way to find coding related topics and projects on the ACN syllabus.",
     technologies: ["React", "JavaScript", "HTML", "CSS"],
     links: {
-      code: "",
-      live: "",
+      code: "https://github.com/Ngoakor12/coding-resource-finder",
+      live: "https://www.ngoako.com/coding-resource-finder",
     },
     details: {
       problem:
@@ -34,8 +34,8 @@ const projects = [
       "An easier way to find coding related topics and projects on the ACN syllabus.",
     technologies: ["React", "JavaScript", "HTML", "CSS"],
     links: {
-      code: "",
-      live: "",
+      code: "https://github.com/Ngoakor12/coding-resource-finder",
+      live: "https://www.ngoako.com/coding-resource-finder",
     },
     details: {
       problem:
@@ -61,8 +61,8 @@ const projects = [
       "An easier way to find coding related topics and projects on the ACN syllabus.",
     technologies: ["React", "JavaScript", "HTML", "CSS"],
     links: {
-      code: "",
-      live: "",
+      code: "https://github.com/Ngoakor12/coding-resource-finder",
+      live: "https://www.ngoako.com/coding-resource-finder",
     },
     details: {
       problem:

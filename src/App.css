@@ -293,11 +293,12 @@ button {
   background: var(--gradient);
   border-radius: 8px;
   padding: 0;
-  padding: 1rem 2.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 125%;
   color: white;
+  padding: 10px 25px;
+  text-decoration: none;
 }
 
 .primary-btn a {
@@ -308,15 +309,16 @@ button {
 .secondary-btn {
   background: none;
   /* border: 2px solid #007FFF; */
-  outline: 2px solid var(--primary-blue);
-  outline-offset: -2px;
+  border: 1px solid var(--primary-blue);
+  /* outline-offset: -2px; */
   box-sizing: border-box;
   border-radius: 8px;
-  padding: 1rem 2.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 125%;
-  color: var(--primary-blue);
+  color: var(--secondary-blue);
+  padding: 10px 25px;
+  text-decoration: none;
 }
 
 .project-btns {
@@ -367,23 +369,24 @@ button {
 .secondary-btn:hover {
   cursor: pointer;
   color: var(--secondary-blue);
-  outline: 1px solid var(--secondary-blue);
-  outline-offset: -1px;
+  /* outline: 1px solid var(--secondary-blue); */
+  /* outline-offset: -1px; */
   background-color: var(--technologies-bg);
 }
 
 .primary-btn:focus-visible {
-  cursor: pointer;
+  /* cursor: pointer; */
   /* background: var(--secondary-blue); */
   outline: 3px solid var(--primary-blue);
 }
 
 .secondary-btn:focus-visible {
-  cursor: pointer;
+  /* cursor: pointer;
   outline: 5px solid var(--primary-blue);
-  outline-offset: -2px;
+  outline-offset: -2px; */
   /* outline: 2px solid var(--primary-blue); */
   /* border: 2px solid var(--primary-blue); */
+  outline: 3px solid var(--primary-blue);
 }
 
 .primary-btn,
@@ -983,7 +986,7 @@ button {
     font-weight: 700;
   }
 
-  .primary-btn {
+  /* .primary-btn {
     font-family: "Inter", sans-serif;
     background: var(--gradient);
     border-radius: 8px;
@@ -992,9 +995,9 @@ button {
     font-weight: 700;
     line-height: 125%;
     color: white;
-  }
+  } */
 
-  .secondary-btn {
+  /* .secondary-btn {
     font-family: "Inter", sans-serif;
     background: none;
     outline: 2px solid var(--primary-blue);
@@ -1005,7 +1008,7 @@ button {
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 125%;
-  }
+  } */
 
   .project {
     display: flex;

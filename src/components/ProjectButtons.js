@@ -1,19 +1,22 @@
 import { Link, useLocation } from "react-router-dom";
-import PrimaryButton from "./PrimaryButton";
-import LiveButton from "./LiveButton";
-import CodeButton from "./CodeButton";
 
 function ProjectButtons({ project }) {
   const { pathname } = useLocation();
   return (
     <article className="project-btns">
-      <PrimaryButton>
-        <Link to={`${pathname === "/" ? "projects/" : ""}${project.slug}`}>
-          View project
-        </Link>
-      </PrimaryButton>
+      <Link
+        className="primary-btn"
+        to={`${pathname === "/" ? "projects/" : ""}${project.slug}`}
+      >
+        View project
+      </Link>
       <div className="secondary-btns">
-        <LiveButton>
+        <a
+          href={project.links.live}
+          className="live-btn"
+          target="_blank"
+          rel="noreferrer"
+        >
           <svg
             aria-hidden="true"
             role="img"
@@ -34,8 +37,13 @@ function ProjectButtons({ project }) {
               <path d="M10 14L21 3"></path>
             </g>
           </svg>
-        </LiveButton>
-        <CodeButton>
+        </a>
+        <a
+          href={project.links.code}
+          className="code-btn"
+          target="_blank"
+          rel="noreferrer"
+        >
           <svg
             aria-hidden="true"
             role="img"
@@ -55,7 +63,7 @@ function ProjectButtons({ project }) {
               <path d="M8 6l-6 6l6 6"></path>
             </g>
           </svg>
-        </CodeButton>
+        </a>
       </div>
     </article>
   );
