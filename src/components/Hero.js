@@ -1,6 +1,3 @@
-import PrimaryButton from "./PrimaryButton";
-import SecondaryButton from "./SecondaryButton";
-
 function Hero() {
   return (
     <section className="hero">
