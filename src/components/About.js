@@ -1,4 +1,3 @@
-import PrimaryButton from "./PrimaryButton";
 import cv from "./assets/ngoako-cv.pdf";
 
 function About() {
