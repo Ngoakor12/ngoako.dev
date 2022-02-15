@@ -47,7 +47,11 @@ function Navigation() {
         <div className="left-menu">
           {isMenuOpen ? (
             <Tippy content="Close menu">
-              <button className="menu" onClick={toggleMenu}>
+              <button
+                className="menu"
+                onClick={toggleMenu}
+                aria-label="Close menu button"
+              >
                 <svg
                   aria-hidden="true"
                   role="img"
@@ -65,7 +69,11 @@ function Navigation() {
             </Tippy>
           ) : (
             <Tippy content="Open menu">
-              <button className="menu" onClick={toggleMenu}>
+              <button
+                className="menu"
+                onClick={toggleMenu}
+                aria-label="Open menu button"
+              >
                 <svg
                   aria-hidden="true"
                   role="img"
