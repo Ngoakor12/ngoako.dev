@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import Tippy from "@tippyjs/react";
-import 'tippy.js/dist/tippy.css'; // optional
+import "tippy.js/dist/tippy.css"; // optional
 
 function ProjectButtons({ project }) {
   const { pathname } = useLocation();
@@ -21,9 +21,10 @@ function ProjectButtons({ project }) {
             target="_blank"
             rel="noreferrer"
             data-tippy-content="Live project"
+            aria-label="Live project"
           >
             <svg
-              aria-hidden="true"
+              // aria-hidden="true"
               role="img"
               width="28"
               height="28"
@@ -51,9 +52,10 @@ function ProjectButtons({ project }) {
             target="_blank"
             rel="noreferrer"
             data-tippy-content="Code repository"
+            aria-label="Code repository"
           >
             <svg
-              aria-hidden="true"
+              // aria-hidden="true"
               role="img"
               width="28"
               height="28"

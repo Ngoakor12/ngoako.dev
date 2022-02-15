@@ -19,11 +19,9 @@ function About() {
             <strong>FIFA</strong>, watching <strong>football</strong>, and{" "}
             <strong>trying new things</strong> in my free time.
           </p>
-          <PrimaryButton>
-            <a href={cv} target="_blank" rel="noreferrer">
-              View CV
-            </a>
-          </PrimaryButton>
+          <a href={cv} target="_blank" rel="noreferrer" className="primary-btn">
+            View CV
+          </a>
         </div>
       </section>
     </section>

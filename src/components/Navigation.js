@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Tippy from "@tippyjs/react";
-import 'tippy.js/dist/tippy.css'; // optional
+import "tippy.js/dist/tippy.css"; // optional
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,14 +45,14 @@ function Navigation() {
       </div>
       <nav className="nav">
         <div className="left-menu">
-          <div className="menu" onClick={toggleMenu}>
-            {isMenuOpen ? (
-              <>
+          {isMenuOpen ? (
+            <Tippy content="Close menu">
+              <button className="menu" onClick={toggleMenu}>
                 <svg
                   aria-hidden="true"
                   role="img"
-                  width="32"
-                  height="32"
+                  width="24"
+                  height="24"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
@@ -61,42 +61,46 @@ function Navigation() {
                     fill="currentColor"
                   ></path>
                 </svg>
-              </>
-            ) : (
-              <svg
-                aria-hidden="true"
-                role="img"
-                width="32"
-                height="32"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            )}
-          </div>
-          <div className="home">
-            <Tippy content="Home">
-              <a href="/">
+              </button>
+            </Tippy>
+          ) : (
+            <Tippy content="Open menu">
+              <button className="menu" onClick={toggleMenu}>
                 <svg
                   aria-hidden="true"
                   role="img"
-                  width="30"
-                  height="30"
+                  width="24"
+                  height="24"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59l7-7l7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z"
+                    d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
                     fill="currentColor"
                   ></path>
                 </svg>
-              </a>
+              </button>
             </Tippy>
-          </div>
+          )}
+          {/* <div className="home"> */}
+          <Tippy content="Home">
+            <a href="/" className="home" aria-label="home">
+              <svg
+                aria-hidden="true"
+                role="img"
+                width="24"
+                height="24"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59l7-7l7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </a>
+          </Tippy>
+          {/* </div> */}
         </div>
         <div className={`main-nav`}>
           <NavLink
@@ -126,14 +130,15 @@ function Navigation() {
         </div>
         <div className="secondary-nav">
           <div className="contact-options">
-            <Tippy content="Linkin profile">
+            <Tippy content="Linkedin profile">
               <a
                 href="https://www.linkedin.com/in/ngoako-ramokgopa-07b65012a/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Linkedin profile"
               >
                 <svg
-                  aria-hidden="true"
+                  // aria-hidden="true"
                   role="img"
                   width="24"
                   height="24"
@@ -158,9 +163,10 @@ function Navigation() {
                 href="mailto:ngoakor12@gmail.com"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Send email"
               >
                 <svg
-                  aria-hidden="true"
+                  // aria-hidden="true"
                   role="img"
                   width="24"
                   height="24"
@@ -179,9 +185,10 @@ function Navigation() {
                 href="https://github.com/Ngoakor12"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Github profile"
               >
                 <svg
-                  aria-hidden="true"
+                  // aria-hidden="true"
                   role="img"
                   width="24"
                   height="24"
@@ -199,9 +206,9 @@ function Navigation() {
             </Tippy>
           </div>
           <Tippy content="Toggle darkmode">
-            <a href="/" className="darkmode-toggle">
+            <button className="darkmode-toggle" aria-label="darkmode toggle">
               <svg
-                aria-hidden="true"
+                // aria-hidden="true"
                 role="img"
                 width="24"
                 height="24"
@@ -213,7 +220,7 @@ function Navigation() {
                   fill="currentColor"
                 ></path>
               </svg>
-            </a>
+            </button>
           </Tippy>
         </div>
       </nav>
