@@ -3,7 +3,7 @@ import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import ProjectDetails from "./components/projectDetails";
 import Projects from "./components/Projects";
@@ -16,24 +16,7 @@ function App() {
       <Navigation />
       <hr className="horizontal-line nav-horizontal-line" />
       <Routes>
-        <Route
-          path="/"
-          exact
-          element={
-            <>
-              <Hero />
-              <hr className="horizontal-line" />
-              <Projects />
-              <hr className="horizontal-line" />
-              <Skills />
-              <hr className="horizontal-line" />
-              <About />
-              <hr className="horizontal-line" />
-              <Contact />
-              <hr className="horizontal-line" />
-            </>
-          }
-        />
+        <Route path="/" exact element={<Home />} />
         <Route
           path="/projects"
           element={
