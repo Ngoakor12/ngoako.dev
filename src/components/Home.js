@@ -16,6 +16,7 @@ function Home() {
       <About />
       <hr className="horizontal-line" />
       <Contact />
+      <hr className="horizontal-line" />
     </>
   );
 }
