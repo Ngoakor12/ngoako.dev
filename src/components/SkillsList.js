@@ -3,7 +3,7 @@ function SkillsList({ skills }) {
     <section className="skills-list">
       {skills.map((skill, idx, array) => {
         return (
-          <div className="skill">
+          <div key={skill.name} className="skill">
             <p className="skill-name">
               <span className="skill-icon">{skill.icon}</span>
               {skill.name}

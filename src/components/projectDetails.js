@@ -34,7 +34,7 @@ function ProjectDetails({ projects }) {
           <div className="project-links">
             <div className="project-link">
               <a href="/" className="live-site">
-                Live site
+                Live project
                 <span className="live-icon">
                   <svg
                     aria-hidden="true"
@@ -62,7 +62,7 @@ function ProjectDetails({ projects }) {
             </div>
             <div className="project-link">
               <a href="/" className="source-code">
-                Source code
+                Code repository
                 <span className="code-icon">
                   <svg
                     aria-hidden="true"
