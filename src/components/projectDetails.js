@@ -1,9 +1,15 @@
-import {  useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import BlockContent from "@sanity/block-content-to-react";
+import { Context } from "../Context";
 
-function ProjectDetails({ projects }) {
+function ProjectDetails() {
+  const { projects } = useContext(Context);
   const navigate = useNavigate();
   const { slug } = useParams();
-  const project = projects.find((project) => project.slug === slug);
+  const project = projects.find((project) => project.slug.current === slug);
+  console.log(projects);
+  console.log(project);
   return (
     <>
       <section className="project-details">
@@ -33,7 +39,7 @@ function ProjectDetails({ projects }) {
           <p className="project-details-description">{project.description}</p>
           <div className="project-links">
             <div className="project-link">
-              <a href="/" className="live-site">
+              <a href={project.links.live} className="live-site">
                 Live project
                 <span className="live-icon">
                   <svg
@@ -61,7 +67,7 @@ function ProjectDetails({ projects }) {
               <hr className="link-border" />
             </div>
             <div className="project-link">
-              <a href="/" className="source-code">
+              <a href={project.links.code} className="source-code">
                 Code repository
                 <span className="code-icon">
                   <svg
@@ -93,44 +99,49 @@ function ProjectDetails({ projects }) {
         <div className="project-detail">
           <div className="project-detail-details">
             <h2>Problem</h2>
-            <p>{project.details.problem}</p>
+            <BlockContent blocks={project.details.problem} />
+            {/* <p>{project.details.problem}</p> */}
           </div>
           <hr className="details-border" />
         </div>
         <div className="project-detail">
           <div className="project-detail-details">
             <h2>Goal</h2>
-            <p>{project.details.goal}</p>
+            <BlockContent blocks={project.details.goal} />
+            {/* <p>{project.details.goal}</p> */}
           </div>
           <hr className="details-border" />
         </div>
         <div className="project-detail">
           <div className="project-detail-details">
             <h2>Tech stack</h2>
-            <p>{project.details.technologies}</p>
+            <BlockContent blocks={project.details.technologies} />
+            {/* <p>{project.details.technologies}</p> */}
           </div>
           <hr className="details-border" />
         </div>
         <div className="project-detail">
           <div className="project-detail-details">
             <h2>Challenges</h2>
-            <p>{project.details.challenges}</p>
+            <BlockContent blocks={project.details.challenges} />
+            {/* <p>{project.details.challenges}</p> */}
           </div>
           <hr className="details-border" />
         </div>
         <div className="project-detail">
-          <div className="project-detail-details" >
+          <div className="project-detail-details">
             <h2>Lessons learned</h2>
-            <p>{project.details.lessons}</p>
+            <BlockContent blocks={project.details.lessons} />
+            {/* <p>{project.details.lessons}</p> */}
           </div>
           <hr className="details-border" />
         </div>
         <div className="project-detail">
           <div className="project-detail-details">
             <h2>Credits</h2>
-            <p>{project.details.credits}</p>
+            <BlockContent blocks={project.details.credits} />
+            {/* <p>{project.details.credits}</p> */}
           </div>
-          <hr className="details-border" />
         </div>
       </section>
     </>

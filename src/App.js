@@ -8,7 +8,6 @@ import Navigation from "./components/Navigation";
 import ProjectDetails from "./components/projectDetails";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import projects from "./project-data";
 
 function App() {
   return (
@@ -30,7 +29,7 @@ function App() {
           path="/projects/:slug"
           element={
             <>
-              <ProjectDetails projects={projects} />
+              <ProjectDetails />
               <hr className="horizontal-line" />
             </>
           }

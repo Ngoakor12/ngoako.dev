@@ -9,7 +9,7 @@ function ProjectButtons({ project }) {
     <article className="project-btns">
       <Link
         className="primary-btn"
-        to={`${pathname === "/" ? "projects/" : ""}${project.slug}`}
+        to={`${pathname === "/" ? "projects/" : ""}${project.slug.current}`}
       >
         View project
       </Link>
