@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import { Context } from "../Context";
 
