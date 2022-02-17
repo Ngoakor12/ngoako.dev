@@ -1,5 +1,4 @@
 import ProjectsList from "./ProjectsList";
-import projects from "../project-data";
 
 function Projects() {
   return (
@@ -11,7 +10,7 @@ function Projects() {
           my github.
         </p>
       </header>
-      <ProjectsList projects={projects} />
+      <ProjectsList />
     </section>
   );
 }

@@ -1,10 +1,19 @@
 import Project from "./Project";
-function ProjectsList({ projects }) {
+import { useContext } from "react";
+import { Context } from "../Context";
+
+function ProjectsList() {
+  const { projects, isLoading } = useContext(Context);
+
   return (
     <section className="project-list">
-      {projects.map((project) => {
-        return <Project key={project.title} projectData={project} />;
-      })}
+      {!isLoading ? (
+        projects.map((project) => {
+          return <Project key={project.title} project={project} />;
+        })
+      ) : (
+        <p>Loading projects...</p>
+      )}
     </section>
   );
 }

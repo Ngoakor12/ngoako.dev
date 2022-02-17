@@ -80,8 +80,8 @@ export default {
           type: "blockContent",
         },
         {
-          name: "techStack",
-          title: "Tech stack",
+          name: "technologies",
+          title: "Technologies",
           type: "blockContent",
         },
         {
