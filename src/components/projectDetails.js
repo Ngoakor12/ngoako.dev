@@ -1,15 +1,29 @@
+import BlockContent from "@sanity/block-content-to-react";
+import urlBuilder from "@sanity/image-url";
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import BlockContent from "@sanity/block-content-to-react";
 import { Context } from "../Context";
+
+function urlFor(source) {
+  return urlBuilder({ projectId: "542oyksl", dataset: "production" }).image(
+    source
+  );
+}
+
+const serializers = {
+  types: {
+    image: ({ node }) => {
+      return <img src={urlFor(node.asset).width(200).url()} alt="" />;
+    },
+  },
+};
 
 function ProjectDetails() {
   const { projects } = useContext(Context);
   const navigate = useNavigate();
   const { slug } = useParams();
   const project = projects.find((project) => project.slug.current === slug);
-  console.log(projects);
-  console.log(project);
+
   return (
     <>
       <section className="project-details">
@@ -108,7 +122,6 @@ function ProjectDetails() {
           <div className="project-detail-details">
             <h2>Goal</h2>
             <BlockContent blocks={project.details.goal} />
-            {/* <p>{project.details.goal}</p> */}
           </div>
           <hr className="details-border" />
         </div>
@@ -116,15 +129,18 @@ function ProjectDetails() {
           <div className="project-detail-details">
             <h2>Tech stack</h2>
             <BlockContent blocks={project.details.technologies} />
-            {/* <p>{project.details.technologies}</p> */}
           </div>
           <hr className="details-border" />
         </div>
         <div className="project-detail">
           <div className="project-detail-details">
             <h2>Challenges</h2>
-            <BlockContent blocks={project.details.challenges} />
-            {/* <p>{project.details.challenges}</p> */}
+            <BlockContent
+              blocks={project.details.challenges}
+              projectId="542oyksl"
+              dataset="production"
+              serializers={serializers}
+            />
           </div>
           <hr className="details-border" />
         </div>
@@ -132,7 +148,6 @@ function ProjectDetails() {
           <div className="project-detail-details">
             <h2>Lessons learned</h2>
             <BlockContent blocks={project.details.lessons} />
-            {/* <p>{project.details.lessons}</p> */}
           </div>
           <hr className="details-border" />
         </div>
@@ -140,7 +155,6 @@ function ProjectDetails() {
           <div className="project-detail-details">
             <h2>Credits</h2>
             <BlockContent blocks={project.details.credits} />
-            {/* <p>{project.details.credits}</p> */}
           </div>
         </div>
       </section>
