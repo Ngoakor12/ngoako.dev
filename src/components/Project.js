@@ -1,10 +1,14 @@
 import ProjectButtons from "./ProjectButtons";
 
-function Project({ project }) {
-  return (
-project?(    <article key={project.title} className="project">
+function Project({ project, urlFor }) {
+  return project ? (
+    <article key={project.title} className="project">
       <div className="project-picture-wrapper">
-        <div className="project-picture"></div>
+        <img
+          className="project-picture"
+          src={urlFor(project.coverImage.image.asset)}
+          alt={project.coverImage.alt}
+        />
       </div>
       <div className="project-details-wrapper">
         <h3 className="project-title">{project.title}</h3>
@@ -18,10 +22,12 @@ project?(    <article key={project.title} className="project">
             );
           })}
         </article>
-        <ProjectButtons project={project}/>
+        <ProjectButtons project={project} />
       </div>
     </article>
-):<p>Loading 2...</p>  );
+  ) : (
+    <p>Loading 2...</p>
+  );
 }
 
 export default Project;

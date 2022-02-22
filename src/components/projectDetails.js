@@ -1,25 +1,10 @@
 import BlockContent from "@sanity/block-content-to-react";
-import urlBuilder from "@sanity/image-url";
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../Context";
 
-function urlFor(source) {
-  return urlBuilder({ projectId: "542oyksl", dataset: "production" }).image(
-    source
-  );
-}
-
-const serializers = {
-  types: {
-    image: ({ node }) => {
-      return <img src={urlFor(node.asset).width(200).url()} alt="" />;
-    },
-  },
-};
-
 function ProjectDetails() {
-  const { projects } = useContext(Context);
+  const { projects, urlFor, serializers } = useContext(Context);
   const navigate = useNavigate();
   const { slug } = useParams();
   const project = projects.find((project) => project.slug.current === slug);
@@ -31,11 +16,8 @@ function ProjectDetails() {
           <button onClick={() => navigate(-1)} className="projects-back-btn">
             <span className="projects-back-btn-icon">
               <svg
-                // xmlns="http://www.w3.org/2000/svg"
-                // xmlns:xlink="http://www.w3.org/1999/xlink"
                 aria-hidden="true"
                 role="img"
-                // class="iconify iconify--bx"
                 width="20"
                 height="20"
                 preserveAspectRatio="xMidYMid meet"
@@ -109,7 +91,11 @@ function ProjectDetails() {
             </div>
           </div>
         </header>
-        <div className="project-details-picture"></div>
+        <img
+          className="project-details-picture"
+          src={urlFor(project.mainImage.image.asset)}
+          alt={project.mainImage.alt}
+        />
         <div className="project-detail">
           <div className="project-detail-details">
             <h2>Problem</h2>
