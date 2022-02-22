@@ -23,20 +23,54 @@ export default {
       },
     },
     {
-      name: "coverImg",
+      name: "coverImage",
       title: "Cover Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      type: "document",
+      fields: [
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: "alt",
+          title: "Alternative text",
+          type: "string",
+        },
+        {
+          name: "figCaption",
+          title: "Caption",
+          type: "string",
+        },
+      ],
     },
     {
       name: "mainImage",
       title: "Main Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      type: "document",
+      fields: [
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: "alt",
+          title: "Alternative text",
+          type: "string",
+        },
+        {
+          name: "figCaption",
+          title: "Caption",
+          type: "string",
+        },
+      ],
     },
     {
       name: "technologies",
