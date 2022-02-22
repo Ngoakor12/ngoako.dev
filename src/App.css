@@ -538,7 +538,7 @@ button {
 
 .project-details-picture {
   width: 100%;
-  height: 20rem;
+  /* height: 20rem; */
   background-color: var(--dark-text);
   border-radius: 8px;
 }
