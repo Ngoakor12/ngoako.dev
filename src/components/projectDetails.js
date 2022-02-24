@@ -96,53 +96,28 @@ function ProjectDetails() {
           src={urlFor(project.mainImage.image.asset)}
           alt={project.mainImage.alt}
         />
-        <div className="project-detail">
-          <div className="project-detail-details">
-            <h2>Problem</h2>
-            <BlockContent blocks={project.details.problem} />
-            {/* <p>{project.details.problem}</p> */}
-          </div>
-          <hr className="details-border" />
-        </div>
-        <div className="project-detail">
-          <div className="project-detail-details">
-            <h2>Goal</h2>
-            <BlockContent blocks={project.details.goal} />
-          </div>
-          <hr className="details-border" />
-        </div>
-        <div className="project-detail">
-          <div className="project-detail-details">
-            <h2>Tech stack</h2>
-            <BlockContent blocks={project.details.technologies} />
-          </div>
-          <hr className="details-border" />
-        </div>
-        <div className="project-detail">
-          <div className="project-detail-details">
-            <h2>Challenges</h2>
-            <BlockContent
-              blocks={project.details.challenges}
-              projectId="542oyksl"
-              dataset="production"
-              serializers={serializers}
-            />
-          </div>
-          <hr className="details-border" />
-        </div>
-        <div className="project-detail">
-          <div className="project-detail-details">
-            <h2>Lessons learned</h2>
-            <BlockContent blocks={project.details.lessons} />
-          </div>
-          <hr className="details-border" />
-        </div>
-        <div className="project-detail">
-          <div className="project-detail-details">
-            <h2>Credits</h2>
-            <BlockContent blocks={project.details.credits} />
-          </div>
-        </div>
+        {project.details.map(
+          (detail, index, array) =>
+            detail.body.length && (
+              <div className="project-detail">
+                <div className="project-detail-details">
+                  <h2>{detail.name}</h2>
+                  <div>
+                    <BlockContent
+                      blocks={detail.body}
+                      projectId="542oyksl"
+                      dataset="production"
+                      serializers={serializers}
+                    />
+                  </div>
+                </div>
+
+                {index !== array.length - 1 && (
+                  <hr className="details-border" />
+                )}
+              </div>
+            )
+        )}
       </section>
     </>
   );
