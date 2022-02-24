@@ -1,10 +1,9 @@
-import BlockContent from "@sanity/block-content-to-react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../Context";
 
 function ProjectDetails() {
-  const { projects, urlFor, serializers } = useContext(Context);
+  const { projects, urlFor, serializers, BlockContent } = useContext(Context);
   const navigate = useNavigate();
   const { slug } = useParams();
   const project = projects.find((project) => project.slug.current === slug);
