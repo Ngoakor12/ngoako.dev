@@ -4,12 +4,12 @@ export default {
   type: "document",
   fields: [
     {
-      name: "image",
+      name: "aboutImage",
       title: "About Image",
       type: "document",
       fields: [
         {
-          name: "src",
+          name: "image",
           title: "Image",
           type: "image",
           options: {
