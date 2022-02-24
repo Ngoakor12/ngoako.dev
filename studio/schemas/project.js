@@ -101,37 +101,28 @@ export default {
     {
       name: "details",
       title: "Details",
-      type: "object",
-      fields: [
+      type: "array",
+      of: [
         {
-          name: "problem",
-          title: "Problem",
-          type: "blockContent",
-        },
-        {
-          name: "goal",
-          title: "Goal",
-          type: "blockContent",
-        },
-        {
-          name: "technologies",
-          title: "Technologies",
-          type: "blockContent",
-        },
-        {
-          name: "challenges",
-          title: "Challenges",
-          type: "blockContent",
-        },
-        {
-          name: "lessons",
-          title: "Lessons",
-          type: "blockContent",
-        },
-        {
-          name: "credits",
-          title: "Credits",
-          type: "blockContent",
+          name: "detail",
+          type: "object",
+          fields: [
+            {
+              name: "order",
+              title: "Order",
+              type: "number",
+            },
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "body",
+              title: "Body",
+              type: "blockContent",
+            },
+          ],
         },
       ],
     },
