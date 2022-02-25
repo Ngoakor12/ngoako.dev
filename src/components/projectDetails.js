@@ -35,7 +35,12 @@ function ProjectDetails() {
             <p className="project-details-description">{project.description}</p>
             <div className="project-links">
               <div className="project-link">
-                <a href={project.links.live} className="live-site">
+                <a
+                  href={project.links.live}
+                  className="live-site"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Live project
                   <span className="live-icon">
                     <svg
@@ -63,7 +68,12 @@ function ProjectDetails() {
                 <hr className="link-border" />
               </div>
               <div className="project-link">
-                <a href={project.links.code} className="source-code">
+                <a
+                  href={project.links.code}
+                  className="source-code"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Code repository
                   <span className="code-icon">
                     <svg
