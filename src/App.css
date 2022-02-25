@@ -108,6 +108,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 8px;
+  border: 1px solid var(--project-border);
   border-radius: 8px;
   color: var(--dark-text);
   cursor: pointer;
@@ -490,8 +491,8 @@ button {
 .about-picture{
   /* min-width: 435px; */
   max-width: 100%;
-  /* height: auto; */
-  object-fit: cover;
+  max-height: 100%;
+  object-fit: fill;
   border-radius: 8px;
 }
 
@@ -1146,11 +1147,12 @@ button {
   }
 
   .about-picture {
-    max-width: 478px;
+    /* max-width: 478px; */
     /* min-width: 435px;
     height: 280px; */
     /* object-fit: contain; */
     /* object-position: top; */
+    max-height:200px;
   }
 
   .about-body {

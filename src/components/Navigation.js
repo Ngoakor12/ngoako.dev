@@ -213,7 +213,7 @@ function Navigation() {
               </a>
             </Tippy>
           </div>
-          <Tippy content="Toggle darkmode">
+          {/* <Tippy content="Toggle darkmode">
             <button className="darkmode-toggle" aria-label="darkmode toggle">
               <svg
                 // aria-hidden="true"
@@ -229,7 +229,7 @@ function Navigation() {
                 ></path>
               </svg>
             </button>
-          </Tippy>
+          </Tippy> */}
         </div>
       </nav>
     </header>
