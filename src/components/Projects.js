@@ -7,6 +7,7 @@ function Projects() {
 
   useEffect(() => {
     setPageTitle("Projects | Ngoako Ramokgopa");
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -11,6 +11,7 @@ function Home() {
 
   useEffect(() => {
     setPageTitle("Ngoako Ramokgopa | Software Developer");
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -12,6 +12,7 @@ function Contact() {
 
   useEffect(() => {
     setPageTitle("Contact | Ngoako Ramokgopa");
+        // eslint-disable-next-line
   }, []);
 
   function handleChange(e) {

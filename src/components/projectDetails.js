@@ -10,9 +10,8 @@ function ProjectDetails() {
   const project = projects.find((project) => project.slug.current === slug);
 
   useEffect(() => {
-    if (project) {
-      setPageTitle(`${project.title} | Project`);
-    }
+    setPageTitle(`${project.title} | Project`);
+    // eslint-disable-next-line
   }, [projects]);
 
   return (
