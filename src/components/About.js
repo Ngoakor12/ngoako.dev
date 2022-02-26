@@ -1,10 +1,14 @@
 import cv from "./assets/ngoako-cv.pdf";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 
 function About() {
-  const { aboutContent, urlFor, BlockContent, serializers } =
+  const { aboutContent, urlFor, BlockContent, serializers, setPageTitle } =
     useContext(Context);
+
+  useEffect(() => {
+    setPageTitle("About | Ngoako Ramokgopa");
+  }, []);
 
   return (
     <section className="about">
@@ -19,14 +23,14 @@ function About() {
             alt={aboutContent.aboutImage.alt}
           />
           <div className="about-body">
-            <p className="about-text">
+            <div className="about-text">
               <BlockContent
                 blocks={aboutContent.body}
                 projectId="542oyksl"
                 dataset="production"
                 serializers={serializers}
               />
-            </p>
+            </div>
             <a
               href={cv}
               target="_blank"

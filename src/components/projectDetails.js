@@ -1,12 +1,19 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 
 function ProjectDetails() {
-  const { projects, urlFor, serializers, BlockContent } = useContext(Context);
+  const { projects, urlFor, serializers, BlockContent, setPageTitle } =
+    useContext(Context);
   const navigate = useNavigate();
   const { slug } = useParams();
   const project = projects.find((project) => project.slug.current === slug);
+
+  useEffect(() => {
+    if (project) {
+      setPageTitle(`${project.title} | Project`);
+    }
+  }, [projects]);
 
   return (
     <section className="project-details">
