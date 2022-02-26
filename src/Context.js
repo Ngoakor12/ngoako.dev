@@ -9,11 +9,18 @@ function ContextProvider({ children }) {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [aboutContent, setAboutContent] = useState(null);
+  const [pageTitle, setPageTitle] = useState(
+    "Ngoako Ramokgopa | Software Developer"
+  );
 
   useEffect(() => {
     getAndSetProjects();
     getAboutContent();
   }, [isLoading]);
+
+  useEffect(() => {
+    document.title = pageTitle;
+  }, [pageTitle]);
 
   function urlFor(source) {
     return urlBuilder({ projectId: "542oyksl", dataset: "production" }).image(
@@ -95,6 +102,7 @@ function ContextProvider({ children }) {
         serializers,
         sanityClient,
         BlockContent,
+        setPageTitle,
       }}
     >
       {children}

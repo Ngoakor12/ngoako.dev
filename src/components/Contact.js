@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { Context } from "../Context";
 
 function Contact() {
+  const { setPageTitle } = useContext(Context);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    setPageTitle("Contact | Ngoako Ramokgopa");
+        // eslint-disable-next-line
+  }, []);
 
   function handleChange(e) {
     const { name } = e.target;
