@@ -556,19 +556,24 @@ button {
   align-items: center;
   justify-content: center;
   font-family: "Inter", sans-serif;
-  color: var(--project-border);
+  /* color: var(--project-border); */
+  color: var(--dark-text);
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 400;
   background-color: transparent;
   cursor: pointer;
   padding-bottom: 4px;
   align-self: flex-start;
-  border-bottom: 1px solid var(--project-border);
+  padding:8px 8px 8px 0;
+  /* border-radius: 8px; */
+  /* transform: translateX(-10px); */
+  /* border-bottom: 1px solid var(--project-border); */
 }
 
 .projects-back-btn:hover {
-  color: var(--dark-text);
-  border-bottom: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
+  /* background-color: var(--technologies-bg); */
+  /* border-bottom: 1px solid var(--primary-blue); */
 }
 
 .projects-back-btn-icon {

@@ -18,8 +18,8 @@ function ProjectDetails() {
                 <svg
                   aria-hidden="true"
                   role="img"
-                  width="20"
-                  height="20"
+                  width="15"
+                  height="15"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
