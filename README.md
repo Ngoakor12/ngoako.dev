@@ -23,6 +23,7 @@ My current software development portfolio built with ReactJS.
 - Dynamic routes in React Router
 - Dynamically change page title according to the active page
 - Create a page not found 404 page
+- Conventional commits
 
 ## Local setup
 **Clone repo**
