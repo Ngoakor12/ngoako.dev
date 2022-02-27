@@ -178,7 +178,7 @@ body {
   font-size: 1.6rem;
 }
 
-.main-nav a:focus-visible{
+.main-nav a:focus-visible {
   border-radius: 8px;
   outline: 3px solid var(--primary-blue);
   outline-offset: -3px;
@@ -645,6 +645,19 @@ button {
 
 .project-detail-details div ul li {
   line-height: 180%;
+}
+
+.project-detail a {
+  display: inline-block;
+  color: var(--secondary-blue);
+  text-decoration: none;
+  line-height: 150%;
+  border-bottom: 1px solid var(--project-border);
+}
+
+.project-detail a:hover {
+  color: var(--dark-text);
+  border-bottom: 1px solid var(--primary-blue);
 }
 
 .details-border {
