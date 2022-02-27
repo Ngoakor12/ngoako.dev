@@ -1,5 +1,5 @@
 # Ngoako.dev
-Software development portfolio built with ReactJS.
+My current software development portfolio built with ReactJS.
 
 [**Live project**](https://www.ngoako.dev/) 🌐
 
