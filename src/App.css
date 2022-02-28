@@ -892,6 +892,27 @@ button {
   background-color: var(--technologies-bg);
 }
 
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  color: var(--dark-text);
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 25px;
+  padding: 3%;
+}
+
+.not-found-page h1 {
+  line-height: 100%;
+  font-size: 7.2rem;
+}
+
+.not-found-page div {
+  line-height: 150%;
+  font-size: 2.4rem;
+}
+
 @media screen and (min-width: 600px) {
   .App {
     display: flex;
@@ -1197,6 +1218,15 @@ button {
   }
 
   .contact-header-title {
+    font-size: 3.6rem;
+  }
+
+  /* PAGE NOT FOUND */
+  .not-found-page h1 {
+    font-size: 9.6rem;
+  }
+
+  .not-found-page div {
     font-size: 3.6rem;
   }
 }

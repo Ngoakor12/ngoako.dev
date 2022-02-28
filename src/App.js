@@ -8,20 +8,33 @@ import Navigation from "./components/Navigation";
 import ProjectDetails from "./components/projectDetails";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import NotFoundPage from "./components/NotFoundPage";
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <hr className="horizontal-line nav-horizontal-line" />
       <Routes>
-        <Route path="/" exact element={<Home />} />
+        <Route
+          path="/"
+          exact
+          element={
+            <>
+              <Navigation />
+              <hr className="horizontal-line nav-horizontal-line" />
+              <Home />
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/projects"
           element={
             <>
+              <Navigation />
+              <hr className="horizontal-line nav-horizontal-line" />
               <Projects />
               <hr className="horizontal-line" />
+              <Footer />
             </>
           }
         />
@@ -29,8 +42,11 @@ function App() {
           path="/projects/:slug"
           element={
             <>
+              <Navigation />
+              <hr className="horizontal-line nav-horizontal-line" />
               <ProjectDetails />
               <hr className="horizontal-line" />
+              <Footer />
             </>
           }
         />
@@ -38,10 +54,13 @@ function App() {
           path="/about"
           element={
             <>
+              <Navigation />
+              <hr className="horizontal-line nav-horizontal-line" />
               <About />
               <hr className="horizontal-line" />
               <Skills />
               <hr className="horizontal-line" />
+              <Footer />
             </>
           }
         />
@@ -49,11 +68,15 @@ function App() {
           path="/contact"
           element={
             <>
+              <Navigation />
+              <hr className="horizontal-line nav-horizontal-line" />
               <Contact />
               <hr className="horizontal-line" />
+              <Footer />
             </>
           }
         />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       {/* <Hero />
       <hr className="horizontal-line" />
@@ -63,7 +86,6 @@ function App() {
       <hr className="horizontal-line" />
       <Contact />
       <hr className="horizontal-line" /> */}
-      <Footer />
     </div>
   );
 }
