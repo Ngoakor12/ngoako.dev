@@ -7,7 +7,7 @@ function Skills() {
       <header className="skills-header">
         <h2 className="skills-header-title">Skills/Technologies</h2>
         <p className="skills-header-description">
-          These are some of the skills and technologies I have worked with. I'm always learning more as and when needed.
+          These are some of the skills and technologies I have worked with. Open to learning more technologies as and when needed.
         </p>
       </header>
       <section className="skills-technologies">
