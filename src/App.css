@@ -761,6 +761,17 @@ button {
   padding-bottom: 25px;
 }
 
+.about p a{
+  text-decoration: none;
+  color: var(--secondary-blue);
+  border-bottom: 1px solid var(--project-border);
+}
+
+.about p a:hover{
+  color: var(--dark-text);
+  border-bottom: 1px solid var(--primary-blue);
+}
+
 /* CONTACT */
 
 .contact {
