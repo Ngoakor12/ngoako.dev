@@ -666,6 +666,17 @@ button {
   height: 1px;
 }
 
+.projects p a{
+  text-decoration: none;
+  color: var(--secondary-blue);
+  border-bottom: 1px solid var(--project-border);
+}
+
+.projects p a:hover{
+  color: var(--dark-text);
+  border-bottom: 1px solid var(--primary-blue);
+}
+
 /* SKILLS */
 .skills {
   color: var(--dark-text);
