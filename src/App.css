@@ -283,9 +283,10 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 25px;
-  height: 80vh;
+  gap: 15px;
+  height: 75vh;
   max-width: 955px;
+  margin-top: 60px;
 }
 
 .headline {
@@ -314,7 +315,7 @@ body {
 .hero-subtitle {
   color: var(--dark-text);
   font-size: 2.4rem;
-  line-height:150%;
+  line-height: 150%;
   max-width: 300px;
 }
 
@@ -432,11 +433,11 @@ button {
 /* PROJECTS */
 .projects {
   color: var(--dark-text);
-  padding: 3%;
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 50px 0;
+  padding: 60px 3% 50px 3%;
+  /* margin-top: 60px; */
   max-width: 955px;
 }
 
@@ -682,7 +683,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 50px 0;
+  padding: 60px 3% 50px 3%;
   max-width: 350px;
 }
 
@@ -752,7 +753,7 @@ button {
   display: flex;
   flex-direction: column;
   max-width: 955px;
-  padding: 50px 0;
+  padding: 60px 3% 50px 3%;
   gap: 20px;
 }
 
@@ -786,7 +787,7 @@ button {
   display: flex;
   flex-direction: column;
   max-width: 955px;
-  padding: 50px 0;
+  padding: 60px 3% 50px 3%;
   gap: 35px;
   max-width: 350px;
 }
@@ -1060,8 +1061,10 @@ button {
     gap: 18px;
   }
 
-  .hero{
+  .hero {
+    margin-top: 0;
     height: 100vh;
+    gap: 25px;
   }
 
   .hero-title {
