@@ -436,7 +436,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 100px 0 50px 0;
+  padding: 50px 0;
   max-width: 955px;
 }
 
@@ -682,7 +682,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 100px 0 50px 0;
+  padding: 50px 0;
   max-width: 350px;
 }
 
@@ -752,7 +752,7 @@ button {
   display: flex;
   flex-direction: column;
   max-width: 955px;
-  padding: 100px 0 50px 0;
+  padding: 50px 0;
   gap: 20px;
 }
 
@@ -789,7 +789,7 @@ button {
   display: flex;
   flex-direction: column;
   max-width: 955px;
-  padding: 100px 0 50px 0;
+  padding: 50px 0;
   gap: 35px;
   max-width: 350px;
 }
@@ -1115,7 +1115,7 @@ button {
   .projects {
     align-items: center;
     gap: 50px;
-    padding: 100px 0;
+    padding: 70px 0;
   }
 
   .projects-header {
@@ -1172,8 +1172,8 @@ button {
   .skills {
     max-width: 955px;
     align-items: center;
-    padding: 100px 0;
     gap: 50px;
+    padding: 70px 0;
   }
 
   .skills-header-title,
@@ -1199,7 +1199,7 @@ button {
     align-items: center;
     gap: 50px;
     max-width: 955px;
-    padding: 100px 0;
+    padding: 70px 0;
   }
 
   .about-header-title {
@@ -1234,7 +1234,7 @@ button {
 
   .contact {
     max-width: 483px;
-    padding: 100px 0;
+    padding: 70px 0;
     gap: 50px;
   }
 
