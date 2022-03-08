@@ -199,7 +199,7 @@ body {
 
 .active-nav::after {
   content: "";
-  height: 4px;
+  height: 5px;
   width: 35px;
   background-color: var(--primary-blue);
   border-top-left-radius: 3px;
@@ -210,7 +210,7 @@ body {
 
 .main-nav a:hover::after {
   content: "";
-  height: 4px;
+  height: 5px;
   width: 35px;
   background-color: var(--primary-blue);
   border-top-left-radius: 3px;
@@ -665,13 +665,13 @@ button {
   height: 1px;
 }
 
-.projects p a{
+.projects p a {
   text-decoration: none;
   color: var(--secondary-blue);
   border-bottom: 1px solid var(--project-border);
 }
 
-.projects p a:hover{
+.projects p a:hover {
   color: var(--dark-text);
   border-bottom: 1px solid var(--primary-blue);
 }
@@ -763,21 +763,18 @@ button {
   max-width: 350px;
 }
 
-.about-body {
-}
-
 .about-text {
   line-height: 180%;
   padding-bottom: 25px;
 }
 
-.about p a{
+.about p a {
   text-decoration: none;
   color: var(--secondary-blue);
   border-bottom: 1px solid var(--project-border);
 }
 
-.about p a:hover{
+.about p a:hover {
   color: var(--dark-text);
   border-bottom: 1px solid var(--primary-blue);
 }
@@ -1044,28 +1041,6 @@ button {
 
   .main-nav {
     position: relative;
-  }
-
-  .active-nav::after {
-    content: "";
-    height: 4px;
-    width: 35px;
-    background-color: var(--primary-blue);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    position: absolute;
-    bottom: 0;
-  }
-
-  .main-nav a:hover::after {
-    content: "";
-    height: 4px;
-    width: 35px;
-    background-color: var(--primary-blue);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    position: absolute;
-    bottom: 0;
   }
 
   .secondary-nav {
