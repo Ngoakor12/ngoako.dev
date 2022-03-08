@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 
@@ -14,34 +13,18 @@ function Navigation() {
     <header className="nav-wrapper">
       {/* Menu for smaller screens */}
       <div className={`${isMenuOpen ? "menu-open" : "menu-closed"}`}>
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? "active-nav" : "")}
-          onClick={toggleMenu}
-        >
+        <a href="/" className="active-nav" onClick={toggleMenu}>
           Home
-        </NavLink>
-        <NavLink
-          to="/projects"
-          className={({ isActive }) => (isActive ? "active-nav" : "")}
-          onClick={toggleMenu}
-        >
+        </a>
+        <a href="#projects" onClick={toggleMenu}>
           Projects
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) => (isActive ? "active-nav" : "")}
-          onClick={toggleMenu}
-        >
+        </a>
+        <a href="#about" onClick={toggleMenu}>
           About
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) => (isActive ? "active-nav" : "")}
-          onClick={toggleMenu}
-        >
+        </a>
+        <a href="#contact" onClick={toggleMenu}>
           Contact
-        </NavLink>
+        </a>
       </div>
       <nav className="nav">
         <div className="left-menu">
@@ -111,30 +94,12 @@ function Navigation() {
           {/* </div> */}
         </div>
         <div className={`main-nav`}>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? "active-nav" : "")}
-          >
+          <a href="/" className="active-nav">
             Home
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className={({ isActive }) => (isActive ? "active-nav" : "")}
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? "active-nav" : "")}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) => (isActive ? "active-nav" : "")}
-          >
-            Contact
-          </NavLink>
+          </a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
         <div className="secondary-nav">
           <div className="contact-options">

@@ -19,7 +19,10 @@ function ProjectDetails() {
       {project ? (
         <>
           <header className="project-details-header">
-            <button onClick={() => navigate(-1)} className="projects-back-btn">
+            <button
+              onClick={() => navigate("/#projects")}
+              className="projects-back-btn"
+            >
               <span className="projects-back-btn-icon">
                 <svg
                   aria-hidden="true"

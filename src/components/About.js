@@ -12,7 +12,7 @@ function About() {
   }, []);
 
   return (
-    <section className="about">
+    <section className="about" id="about">
       <header className="about-header">
         <h2 className="about-header-title">A bit about me</h2>
       </header>
