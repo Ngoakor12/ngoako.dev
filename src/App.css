@@ -436,7 +436,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 60px 3% 50px 3%;
+  padding: 70px 3% 50px 3%;
   /* margin-top: 60px; */
   max-width: 955px;
 }
