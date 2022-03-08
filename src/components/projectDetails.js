@@ -20,7 +20,7 @@ function ProjectDetails() {
         <>
           <header className="project-details-header">
             <button
-              onClick={() => navigate("/#projects")}
+              onClick={() => navigate(-1)}
               className="projects-back-btn"
             >
               <span className="projects-back-btn-icon">
