@@ -284,7 +284,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   gap: 25px;
-  height: 100vh;
+  height: 80vh;
   max-width: 955px;
 }
 
@@ -313,8 +313,8 @@ body {
 
 .hero-subtitle {
   color: var(--dark-text);
-  /* font-size: 1.8rem; */
-  line-height: 125%;
+  font-size: 2.4rem;
+  line-height:150%;
   max-width: 300px;
 }
 
@@ -944,10 +944,11 @@ button {
   .hero-title,
   .gradient {
     max-width: 100%;
+    font-size: 4.8rem;
   }
 
   .hero-subtitle {
-    max-width: 100%;
+    max-width: 584px;
   }
 
   .projects,
@@ -1059,6 +1060,10 @@ button {
     gap: 18px;
   }
 
+  .hero{
+    height: 100vh;
+  }
+
   .hero-title {
     font-size: 6.4rem;
     color: var(--dark-text);
@@ -1069,6 +1074,7 @@ button {
     color: var(--dark-text);
     font-size: 2.4rem;
     line-height: 125%;
+    max-width: 100%;
   }
 
   .hero-buttons {
