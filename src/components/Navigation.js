@@ -1,9 +1,13 @@
 import { useState } from "react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
+import { useParams, useLocation } from "react-router-dom";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+  const domainUrl = "https://ngoako.dev/";
+  console.log(pathname);
 
   function toggleMenu() {
     setIsMenuOpen((prevState) => !prevState);
@@ -16,13 +20,22 @@ function Navigation() {
         <a href="/" className="active-nav" onClick={toggleMenu}>
           Home
         </a>
-        <a href="#projects" onClick={toggleMenu}>
+        <a
+          href={pathname === "/" ? "#projects" : `${domainUrl}#projects`}
+          onClick={toggleMenu}
+        >
           Projects
         </a>
-        <a href="#about" onClick={toggleMenu}>
+        <a
+          href={pathname === "/" ? "#about" : `${domainUrl}#about`}
+          onClick={toggleMenu}
+        >
           About
         </a>
-        <a href="#contact" onClick={toggleMenu}>
+        <a
+          href={pathname === "/" ? "#contact" : `${domainUrl}#contact`}
+          onClick={toggleMenu}
+        >
           Contact
         </a>
       </div>
@@ -73,7 +86,6 @@ function Navigation() {
               </button>
             </Tippy>
           )}
-          {/* <div className="home"> */}
           <Tippy content="Home">
             <a href="/" className="home" aria-label="home">
               <svg
@@ -91,15 +103,18 @@ function Navigation() {
               </svg>
             </a>
           </Tippy>
-          {/* </div> */}
         </div>
         <div className={`main-nav`}>
           <a href="/" className="active-nav">
             Home
           </a>
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href={pathname === "/" ? "#projects" : `${domainUrl}#projects`}>
+            Projects
+          </a>
+          <a href={pathname === "/" ? "#about" : `${domainUrl}#about`}>About</a>
+          <a href={pathname === "/" ? "#contact" : `${domainUrl}#contact`}>
+            Contact
+          </a>
         </div>
         <div className="secondary-nav">
           <div className="contact-options">
