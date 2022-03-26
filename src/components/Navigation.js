@@ -7,7 +7,6 @@ function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { pathname } = useLocation();
   const domainUrl = "https://ngoako.dev/";
-  console.log(pathname);
 
   function toggleMenu() {
     setIsMenuOpen((prevState) => !prevState);
