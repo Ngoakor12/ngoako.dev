@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
+import { Context } from "../Context";
+
 
 function ProjectButtons({ project }) {
   const { pathname } = useLocation();
+  const { isDefaultLink } =
+  useContext(Context);
 
   return (
     <article className="project-btns">
@@ -16,12 +21,15 @@ function ProjectButtons({ project }) {
       <div className="secondary-btns">
         <Tippy content="Live project">
           <a
-            href={project.links.live}
-            className="live-btn"
+            href={isDefaultLink(project.links.live)}
+            className={`live-btn ${
+              isDefaultLink(project.links.live) === "#" ? "disabled-link" : ""
+            }`}
             target="_blank"
             rel="noreferrer"
             data-tippy-content="Live project"
             aria-label="Live project"
+            role="button"
           >
             <svg
               // aria-hidden="true"
@@ -47,12 +55,15 @@ function ProjectButtons({ project }) {
         </Tippy>
         <Tippy content="Code repository">
           <a
-            href={project.links.code}
-            className="code-btn"
+            href={isDefaultLink(project.links.code)}
+            className={`code-btn ${
+              isDefaultLink(project.links.live) === "#" ? "disabled-link" : ""
+            }`}
             target="_blank"
             rel="noreferrer"
             data-tippy-content="Code repository"
             aria-label="Code repository"
+            role="button"
           >
             <svg
               // aria-hidden="true"

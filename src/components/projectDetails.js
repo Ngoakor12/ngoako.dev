@@ -3,8 +3,14 @@ import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 
 function ProjectDetails() {
-  const { projects, urlFor, serializers, BlockContent, setPageTitle } =
-    useContext(Context);
+  const {
+    projects,
+    urlFor,
+    serializers,
+    BlockContent,
+    setPageTitle,
+    isDefaultLink,
+  } = useContext(Context);
   const navigate = useNavigate();
   const { slug } = useParams();
   const project = projects.find((project) => project.slug.current === slug);
@@ -19,10 +25,7 @@ function ProjectDetails() {
       {project ? (
         <>
           <header className="project-details-header">
-            <button
-              onClick={() => navigate(-1)}
-              className="projects-back-btn"
-            >
+            <button onClick={() => navigate(-1)} className="projects-back-btn">
               <span className="projects-back-btn-icon">
                 <svg
                   aria-hidden="true"
@@ -45,10 +48,15 @@ function ProjectDetails() {
             <div className="project-links">
               <div className="project-link">
                 <a
-                  href={project.links.live}
-                  className="live-site"
+                  href={isDefaultLink(project.links.live)}
+                  className={`live-site ${
+                    isDefaultLink(project.links.live) === "#"
+                      ? "disabled-link"
+                      : ""
+                  }`}
                   target="_blank"
                   rel="noreferrer"
+                  role="button"
                 >
                   Live project
                   <span className="live-icon">
@@ -78,10 +86,15 @@ function ProjectDetails() {
               </div>
               <div className="project-link">
                 <a
-                  href={project.links.code}
-                  className="source-code"
+                  href={isDefaultLink(project.links.code)}
+                  className={`source-code ${
+                    isDefaultLink(project.links.code) === "#"
+                      ? "disabled-link"
+                      : ""
+                  }`}
                   target="_blank"
                   rel="noreferrer"
+                  role="button"
                 >
                   Code repository
                   <span className="code-icon">

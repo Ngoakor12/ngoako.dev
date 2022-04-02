@@ -20,6 +20,7 @@ export default {
           name: "alt",
           title: "Alternative text",
           type: "string",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "figCaption",
@@ -27,11 +28,13 @@ export default {
           type: "string",
         },
       ],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "body",
       title: "About Body",
       type: "blockContent",
+      validation: (Rule) => Rule.required(),
     },
   ],
 };
