@@ -7,11 +7,13 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => Rule.required().max(100),
     },
     {
       name: "description",
       title: "Description",
       type: "string",
+      validation: (Rule) => Rule.required().max(100),
     },
     {
       name: "slug",
@@ -21,6 +23,7 @@ export default {
         source: "title",
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "coverImage",
@@ -34,11 +37,13 @@ export default {
           options: {
             hotspot: true,
           },
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "alt",
           title: "Alternative text",
           type: "string",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "figCaption",
@@ -46,6 +51,7 @@ export default {
           type: "string",
         },
       ],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "mainImage",
@@ -59,11 +65,13 @@ export default {
           options: {
             hotspot: true,
           },
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "alt",
           title: "Alternative text",
           type: "string",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "figCaption",
@@ -71,6 +79,7 @@ export default {
           type: "string",
         },
       ],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "technologies",
@@ -80,8 +89,10 @@ export default {
         {
           type: "string",
           title: "technology",
+          validation: (Rule) => Rule.required().min(1),
         },
       ],
+      validation: (Rule) => Rule.required().min(1),
     },
     {
       name: "links",
@@ -125,6 +136,7 @@ export default {
           ],
         },
       ],
+      validation: (Rule) => Rule.required().min(1),
     },
   ],
 };
