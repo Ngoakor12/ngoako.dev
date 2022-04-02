@@ -435,6 +435,28 @@ button {
   transform: scale(97%);
 }
 
+.disabled-link{
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+/* .disabled-link:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+} */
+
+/* .disabled-link a {
+  pointer-events: none;
+}
+
+.project-link a{
+  cursor: not-allowed !important;
+}
+.project-link{
+  cursor: not-allowed !important;
+} */
+
 /* PROJECTS */
 .projects {
   color: var(--dark-text);

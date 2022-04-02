@@ -92,6 +92,10 @@ function ContextProvider({ children }) {
     }
   }
 
+  function isDefaultLink(link) {
+    return link === "https://www.example.com" ? "#" : link;
+  }
+
   return (
     <Context.Provider
       value={{
@@ -103,6 +107,7 @@ function ContextProvider({ children }) {
         sanityClient,
         BlockContent,
         setPageTitle,
+        isDefaultLink,
       }}
     >
       {children}
