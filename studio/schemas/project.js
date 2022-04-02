@@ -101,11 +101,17 @@ export default {
       fields: [
         {
           name: "code",
-          type: "string",
+          type: "url",
+          validation: Rule => Rule.uri({
+            scheme: ['http', 'https', 'mailto', 'tel']
+          })
         },
         {
           name: "live",
-          type: "string",
+          type: "url",
+          validation: Rule => Rule.uri({
+            scheme: ['http', 'https', 'mailto', 'tel']
+          })
         },
       ],
     },
