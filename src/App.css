@@ -734,8 +734,8 @@ button {
 .skill-list-heading {
   font-size: 1.8rem;
   color: #ffffff;
-  background: var(--gradient);
-  padding: 19.5px 32px;
+  background-color: var(--dark-text);
+  padding: 15px 30px;
   border: 1px solid var(--project-border);
   border-bottom: 0;
   border-radius: 8px;
@@ -763,7 +763,7 @@ button {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 18px 32px;
+  padding: 15px 30px;
   background-color: #ffffff;
   max-height: 70px;
 }
@@ -1188,7 +1188,7 @@ button {
   }
 
   .skills-technologies {
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
   }
 
