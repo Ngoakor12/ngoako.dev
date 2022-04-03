@@ -3,7 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
-import ProjectDetails from "./components/projectDetails";
+import ProjectDetails from "./components/ProjectDetails";
 import NotFoundPage from "./components/NotFoundPage";
 
 function App() {
