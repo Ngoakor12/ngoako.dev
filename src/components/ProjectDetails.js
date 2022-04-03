@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Context } from "../Context";
+import { backArrowIcon, liveIcon, codeIcon } from "../svgs";
 
 function ProjectDetails() {
   const {
@@ -26,21 +27,7 @@ function ProjectDetails() {
         <>
           <header className="project-details-header">
             <button onClick={() => navigate(-1)} className="projects-back-btn">
-              <span className="projects-back-btn-icon">
-                <svg
-                  aria-hidden="true"
-                  role="img"
-                  width="15"
-                  height="15"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M21 11H6.414l5.293-5.293l-1.414-1.414L2.586 12l7.707 7.707l1.414-1.414L6.414 13H21z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </span>
+              <span className="projects-back-btn-icon">{backArrowIcon}</span>
               Back to projects
             </button>
             <h1 className="project-details-heading">{project.title}</h1>
@@ -59,28 +46,7 @@ function ProjectDetails() {
                   role="button"
                 >
                   Live project
-                  <span className="live-icon">
-                    <svg
-                      aria-hidden="true"
-                      role="img"
-                      width="28"
-                      height="28"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                      </g>
-                    </svg>
-                  </span>
+                  <span className="live-icon">{liveIcon}</span>
                 </a>
                 <hr className="link-border" />
               </div>
@@ -97,27 +63,7 @@ function ProjectDetails() {
                   role="button"
                 >
                   Code repository
-                  <span className="code-icon">
-                    <svg
-                      aria-hidden="true"
-                      role="img"
-                      width="28"
-                      height="28"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <g
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M16 18l6-6l-6-6"></path>
-                        <path d="M8 6l-6 6l6 6"></path>
-                      </g>
-                    </svg>
-                  </span>
+                  <span className="code-icon">{codeIcon}</span>
                 </a>
                 <hr className="link-border" />
               </div>

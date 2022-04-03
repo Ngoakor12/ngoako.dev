@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Context } from "../Context";
+import { mailIcon } from "../svgs";
 
 function Contact() {
   const { setPageTitle } = useContext(Context);
@@ -12,7 +13,7 @@ function Contact() {
 
   useEffect(() => {
     setPageTitle("Contact | Ngoako Ramokgopa");
-        // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   function handleChange(e) {
@@ -24,11 +25,6 @@ function Contact() {
       };
     });
   }
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   console.log(form);
-  // }
 
   return (
     <section className="contact" id="contact">
@@ -45,21 +41,7 @@ function Contact() {
         method="POST"
       >
         <p className="contact-form-email">
-          <span className="contact-form-email-icon">
-            <svg
-              // aria-hidden="true"
-              role="img"
-              width="24"
-              height="24"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223l-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044L20.002 18H4z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </span>
+          <span className="contact-form-email-icon">{mailIcon}</span>
           ngoakor12@gmail.com
         </p>
         <div className="contact-form-field">
