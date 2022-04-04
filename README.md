@@ -1,5 +1,5 @@
 # Ngoako.dev
-My current software development portfolio built with React.
+My current software development portfolio built with React and Sanity.
 
 [**Live project**](https://www.ngoako.dev/) 🌐
 
