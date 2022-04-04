@@ -514,11 +514,6 @@ button {
   color: var(--secondary-blue);
 }
 
-.project:hover .project-picture {
-  border:1px solid var(--secondary-blue);
-}
-
-
 .project-picture {
   width: 100%;
   height: 20rem;
