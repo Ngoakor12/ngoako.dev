@@ -519,6 +519,7 @@ button {
   height: 20rem;
   background-color: var(--dark-text);
   border-radius: 8px;
+  border: 1px solid var(--project-border);
 }
 
 .about-picture {
@@ -582,6 +583,7 @@ button {
   /* height: 20rem; */
   background-color: var(--dark-text);
   border-radius: 8px;
+  border: 1px solid var(--project-border);
 }
 
 .projects-back-btn {
