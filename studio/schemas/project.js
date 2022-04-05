@@ -26,6 +26,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "order",
+      title: "Order",
+      type: "number",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "coverImage",
       title: "Cover Image",
       type: "document",
