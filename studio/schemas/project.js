@@ -26,6 +26,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "order",
+      title: "Order",
+      type: "number",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "coverImage",
       title: "Cover Image",
       type: "document",
@@ -102,18 +108,30 @@ export default {
         {
           name: "code",
           type: "url",
-          validation: Rule => Rule.uri({
-            scheme: ['http', 'https', 'mailto', 'tel']
-          })
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ["http", "https", "mailto", "tel"],
+            }),
         },
         {
           name: "live",
           type: "url",
-          validation: Rule => Rule.uri({
-            scheme: ['http', 'https', 'mailto', 'tel']
-          })
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ["http", "https", "mailto", "tel"],
+            }),
         },
       ],
+    },
+    {
+      name: "type",
+      title: "Type",
+      type: "string",
+      options: {
+        list: ["individual", "group"],
+        layout: "radio",
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "details",
