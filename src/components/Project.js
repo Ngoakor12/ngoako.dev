@@ -1,6 +1,7 @@
 import ProjectButtons from "./ProjectButtons";
 import { individualTypeIcon } from "../svgs";
 import { groupTypeIcon } from "../svgs";
+import Tippy from "@tippyjs/react";
 
 function Project({ project, urlFor }) {
   return project ? (
@@ -17,9 +18,20 @@ function Project({ project, urlFor }) {
           <span className="title">
             <h3>{project.title}</h3>
           </span>
-          <span className="project-type">
-            {(project.type !== undefined) && (project.type === "individual" ? individualTypeIcon: groupTypeIcon) }
-          </span>
+          <Tippy
+            content={
+              project.type === "individual"
+                ? "Individual project"
+                : "Group project"
+            }
+          >
+            <span className="project-type">
+              {project.type !== undefined &&
+                (project.type === "individual"
+                  ? individualTypeIcon
+                  : groupTypeIcon)}
+            </span>
+          </Tippy>
         </div>
         <p className="project-description">{project.description}</p>
         <article className="technologies">
