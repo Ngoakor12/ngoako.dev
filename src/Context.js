@@ -72,7 +72,6 @@ function ContextProvider({ children }) {
       console.log(error);
     }
   }
-  console.log(projects)
 
   async function getAboutContent() {
     const query = `*[_type == "about"]{
