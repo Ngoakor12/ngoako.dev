@@ -43,6 +43,8 @@ function ContextProvider({ children }) {
       description,
       technologies,
       links,
+      order,
+      type,
       details,
       coverImage{
         alt,

@@ -511,8 +511,12 @@ button {
   border: 1px solid var(--secondary-blue);
 }
 
-.project:hover .project-title {
+.project:hover .project-title .title{
   color: var(--secondary-blue);
+}
+
+.project-type{
+  color: hsl(210, 14%, 71%);
 }
 
 .project-picture {
@@ -538,6 +542,8 @@ button {
 }
 
 .project-title {
+  display: flex;
+  justify-content: space-between;
   font-size: 2.4rem;
   font-weight: 700;
 }
