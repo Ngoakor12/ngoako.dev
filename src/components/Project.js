@@ -1,4 +1,6 @@
 import ProjectButtons from "./ProjectButtons";
+import { individualTypeIcon } from "../svgs";
+import { groupTypeIcon } from "../svgs";
 
 function Project({ project, urlFor }) {
   return project ? (
@@ -11,7 +13,15 @@ function Project({ project, urlFor }) {
         />
       </div>
       <div className="project-details-wrapper">
-        <h3 className="project-title">{project.title}</h3>
+        <div className="project-title">
+          <span className="title">
+            <h3>{project.title}</h3>
+          </span>
+          <span>
+            {console.log(project.type)}
+            {(project.type !== undefined) && (project.type === "individual" ? individualTypeIcon: groupTypeIcon) }
+          </span>
+        </div>
         <p className="project-description">{project.description}</p>
         <article className="technologies">
           {project.technologies.map((technology) => {
