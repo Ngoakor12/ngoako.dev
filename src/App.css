@@ -767,20 +767,26 @@ button {
 }
 
 .skill-name {
-  border: 0;
-  border-radius: 8px;
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 14px; 
-  padding: 15px 30px;
-  background-color: #ffffff;
-  max-height: 70px;
+  gap: 14px;
 }
 
 .skill-icon {
   display: flex;
   align-items: center;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  border-radius: 8px;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  max-height: 70px;
 }
 
 /* ABOUT */
