@@ -515,6 +515,10 @@ button {
   color: var(--secondary-blue);
 }
 
+.project-type{
+  color: hsl(210, 14%, 71%);
+}
+
 .project-picture {
   width: 100%;
   height: 20rem;

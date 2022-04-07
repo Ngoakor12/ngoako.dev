@@ -17,8 +17,7 @@ function Project({ project, urlFor }) {
           <span className="title">
             <h3>{project.title}</h3>
           </span>
-          <span>
-            {console.log(project.type)}
+          <span className="project-type">
             {(project.type !== undefined) && (project.type === "individual" ? individualTypeIcon: groupTypeIcon) }
           </span>
         </div>
