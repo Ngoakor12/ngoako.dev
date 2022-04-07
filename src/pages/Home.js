@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../Context";
-import About from "./About";
-import Contact from "./Contact";
-import Hero from "./Hero";
-import Projects from "./Projects";
-import Skills from "./Skills";
+import About from "../components/About";
+import Contact from "../components/Contact";
+import Hero from "../components/Hero";
+import Projects from "../components/Projects";
+import Skills from "../components/Skills";
 
 function Home() {
   const { setPageTitle } = useContext(Context);
