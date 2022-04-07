@@ -2,8 +2,7 @@ function SkillsList({ skills }) {
   return (
     <section className="skills-list">
       {skills.map((skill, idx, array) => {
-        const startDate = new Date(skill.startTime);
-        const years = Math.floor((Date.now() - startDate.getTime())/(365*24*3600*1000));
+        const years = (new Date()).getFullYear() - skill.startYear;
 
         return (
           <div key={skill.name} className="skill">
