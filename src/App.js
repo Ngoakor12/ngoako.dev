@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Navigation from "./components/Navigation";
-import ProjectDetails from "./components/ProjectDetails";
-import NotFoundPage from "./components/NotFoundPage";
+import ProjectDetails from "./pages/ProjectDetails";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
