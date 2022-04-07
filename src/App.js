@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Navigation from "./components/Navigation";
 import ProjectDetails from "./pages/ProjectDetails";
-import NotFoundPage from "./components/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
