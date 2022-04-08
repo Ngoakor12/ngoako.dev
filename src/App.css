@@ -791,12 +791,9 @@ button {
   display: flex;
   align-items: center;
   gap: 14px;
-<<<<<<< Updated upstream
-=======
   padding: 15px 30px;
   background-color: #ffffff;
   max-height: 70px;
->>>>>>> Stashed changes
 }
 
 .skill-icon {
