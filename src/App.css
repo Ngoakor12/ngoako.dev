@@ -63,6 +63,26 @@ button:focus-visible {
   outline: 3px solid var(--primary-blue);
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  background-color: hsl(210, 13, 81);
+  width: 12px;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: hsl(210, 13, 71);
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(210, 25, 99);
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e0dbe0;
+  border-radius: 25px;
+}
+
 /* NAVIGATION */
 .nav-wrapper {
   display: flex;
@@ -511,7 +531,7 @@ button {
   border: 1px solid var(--secondary-blue);
 }
 
-.project:hover .project-title .title{
+.project:hover .project-title .title {
   color: var(--secondary-blue);
 }
 
@@ -771,6 +791,12 @@ button {
   display: flex;
   align-items: center;
   gap: 14px;
+<<<<<<< Updated upstream
+=======
+  padding: 15px 30px;
+  background-color: #ffffff;
+  max-height: 70px;
+>>>>>>> Stashed changes
 }
 
 .skill-icon {
