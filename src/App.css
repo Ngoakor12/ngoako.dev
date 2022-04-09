@@ -69,10 +69,6 @@ button:focus-visible {
   width: 12px;
 }
 
-::-webkit-scrollbar:hover {
-  background-color: hsl(210, 13, 71);
-}
-
 ::-webkit-scrollbar-track {
   background-color: hsl(210, 25, 99);
   width: 14px;
@@ -81,6 +77,10 @@ button:focus-visible {
 ::-webkit-scrollbar-thumb {
   background-color: #e0dbe0;
   border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(210, 13, 71);
 }
 
 /* NAVIGATION */
@@ -535,7 +535,7 @@ button {
   color: var(--secondary-blue);
 }
 
-.project-type{
+.project-type {
   color: hsl(210, 14%, 71%);
 }
 
@@ -791,9 +791,6 @@ button {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 15px 30px;
-  background-color: #ffffff;
-  max-height: 70px;
 }
 
 .skill-icon {
