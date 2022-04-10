@@ -65,12 +65,12 @@ button:focus-visible {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  background-color: hsl(210, 13, 81);
+  background-color: hsl(210, 13%, 81%);
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: hsl(210, 25, 99);
+  background-color: hsl(210, 25%, 99%);
   width: 14px;
 }
 
