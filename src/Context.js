@@ -14,9 +14,17 @@ function ContextProvider({ children }) {
   );
 
   useEffect(() => {
-    getAndSetProjects();
-    getAboutContent();
-  }, [isLoading]);
+    async function initialFetchAndSet() {
+      const [aboutContent, projects] = await Promise.all([
+        getAboutContent(),
+        getAndSetProjects(),
+      ]);
+      setAboutContent(aboutContent[0]);
+      setProjects(projects);
+      setIsLoading(false);
+    }
+    initialFetchAndSet();
+  }, []);
 
   useEffect(() => {
     document.title = pageTitle;
@@ -66,8 +74,7 @@ function ContextProvider({ children }) {
     try {
       const response = await sanityClient.fetch(query);
       const data = await response;
-      setProjects(data);
-      setIsLoading(false);
+      return data;
     } catch (error) {
       console.log(error);
     }
@@ -88,7 +95,7 @@ function ContextProvider({ children }) {
     try {
       const response = await sanityClient.fetch(query);
       const data = await response;
-      setAboutContent(data[0]);
+      return data;
     } catch (error) {
       console.log(error);
     }
