@@ -1288,3 +1288,21 @@ button {
     font-size: 3.6rem;
   }
 }
+
+.skip-proj-btn-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transform: translateX(-200%);
+  transition: transform 250ms ease-in;
+  background-color: rgba(250, 251, 252);
+  z-index: 999;
+}
+.skip-proj-btn-wrapper:focus-within {
+  transform: translateX(0);
+}
+.skip-proj-btn {
+  display: flex;
+  align-items: center;
+}
