@@ -46,12 +46,7 @@ function Navigation() {
           Contact
         </a>
       </div>
-      <nav className="nav">   
-        <div className="skip-proj-btn-wrapper">
-          <a href="#skills" tabIndex={1} className="skip-proj-btn secondary-btn">
-                Skip Projects
-          </a>  
-        </div>              
+      <nav className="nav">                
         <div className="left-menu">
           {isMenuOpen ? (
             <Tippy content="Close menu">
@@ -81,7 +76,7 @@ function Navigation() {
           </Tippy>
         </div>
         <div className={`main-nav`}>
-          <a href="/" tabIndex={0} className="active-nav">
+          <a href="/" className="active-nav">
             Home
           </a>
           <a href={pathname === "/" ? "#projects" : `${domainUrl}#projects`}>

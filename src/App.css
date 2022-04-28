@@ -356,6 +356,15 @@ button:focus-visible {
   flex-wrap: wrap;
 }
 
+.section-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
 button {
   border: 0;
 }
@@ -1291,18 +1300,30 @@ button {
 
 .skip-proj-btn-wrapper {
   position: absolute;
+  top: 0;
   display: flex;
   align-items: center;
-  height: 100%;
-  transform: translateX(-200%);
-  transition: transform 250ms ease-in;
-  background-color: rgba(250, 251, 252);
-  z-index: 999;
+  width: 100%;
+  max-width: 955px;
+  margin-top: 2em;
+
+  opacity: 0;
 }
 .skip-proj-btn-wrapper:focus-within {
-  transform: translateX(0);
+  opacity: 1;
 }
 .skip-proj-btn {
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .skip-proj-btn-wrapper {
+    margin-left: 6%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .skip-proj-btn-wrapper {
+    margin-top: 0.8em;
+  }
 }
