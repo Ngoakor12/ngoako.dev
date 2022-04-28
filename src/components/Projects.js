@@ -13,7 +13,7 @@ function Projects() {
 
   return (
     <div className="section-wrapper">
-      <SkipButton skipTo={"skills"} />     
+      <SkipButton skipTo={"skills"} children={"Skip Projects"} />     
       <section className="projects" id="projects">
         <header className="projects-header">
           <h2 className="projects-header-title">Projects</h2>

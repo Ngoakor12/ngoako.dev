@@ -1,9 +1,9 @@
-function SkipButton({ skipTo }) {
+function SkipButton({ skipTo, children }) {
     return(
         <>
-            <div className="skip-proj-btn-wrapper">
-                <a href={`#${skipTo}`} className="skip-proj-btn secondary-btn">
-                Skip Projects
+            <div className="skip-btn-wrapper">
+                <a href={`#${skipTo}`} className="skip-btn secondary-btn">
+                {children}
                 </a>     
             </div>          
         </>
