@@ -1300,7 +1300,7 @@ button {
   }
 }
 
-.skip-btn-wrapper {
+.skip-section-btn-wrapper {
   position: absolute;
   top: 0;
   display: flex;
@@ -1311,21 +1311,21 @@ button {
 
   opacity: 0;
 }
-.skip-btn-wrapper:focus-within {
+.skip-section-btn-wrapper:focus-within {
   opacity: 1;
 }
-.skip-btn {
+.skip-section-btn {
   display: flex;
   align-items: center;
 }
 
 @media screen and (max-width: 900px) {
-  .skip-btn-wrapper {
+  .skip-section-btn-wrapper {
     margin-left: 6%;
   }
 }
 @media screen and (max-width: 600px) {
-  .skip-btn-wrapper {
+  .skip-section-btn-wrapper {
     margin-top: 0.8em;
   }
 }
