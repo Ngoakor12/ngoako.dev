@@ -1310,9 +1310,11 @@ button {
   margin-top: 2em;
 
   opacity: 0;
+  pointer-events: none;
 }
 .skip-section-btn-wrapper:focus-within {
   opacity: 1;
+  pointer-events: visible;
 }
 .skip-section-btn {
   display: flex;
