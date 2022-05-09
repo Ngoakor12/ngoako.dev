@@ -3,7 +3,7 @@ import skillsData from "../skills-data";
 
 function Skills() {
   return (
-    <section className="skills">
+    <section className="skills" id="skills">
       <header className="skills-header">
         <h2 className="skills-header-title">Skills/Technologies</h2>
         <p className="skills-header-description">

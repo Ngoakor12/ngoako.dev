@@ -92,6 +92,7 @@ button:focus-visible {
   position: fixed;
   top: 0;
   height: 60px;
+  z-index: 9;
   background-color: rgba(250, 251, 252, 0.7);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -109,6 +110,7 @@ button:focus-visible {
 .nav-horizontal-line {
   position: fixed;
   top: 60px;
+  z-index: 9;
 }
 
 .left-menu {
@@ -354,6 +356,15 @@ button:focus-visible {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.section-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 button {
@@ -1286,5 +1297,37 @@ button {
 
   .not-found-page div {
     font-size: 3.6rem;
+  }
+}
+
+.skip-section-btn-wrapper {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 955px;
+  margin-top: 2em;
+
+  opacity: 0;
+  pointer-events: none;
+}
+.skip-section-btn-wrapper:focus-within {
+  opacity: 1;
+  pointer-events: visible;
+}
+.skip-section-btn {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .skip-section-btn-wrapper {
+    margin-left: 6%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .skip-section-btn-wrapper {
+    margin-top: 0.8em;
   }
 }
