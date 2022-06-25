@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <section className="headline">
         <h1 className="hero-title">Ngoako Ramokgopa</h1>
         <h2 className="hero-title gradient">{`<Software Developer/>`}</h2>
