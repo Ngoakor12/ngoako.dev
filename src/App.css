@@ -1307,8 +1307,7 @@ button {
   align-items: center;
   width: 100%;
   max-width: 955px;
-  margin-top: 2em;
-
+  margin-top: .5em;
   opacity: 0;
   pointer-events: none;
 }
@@ -1319,6 +1318,12 @@ button {
 .skip-section-btn {
   display: flex;
   align-items: center;
+  z-index: 10;
+  background-color: var(--light-bg);
+}
+.skip-section-btn:hover{
+  background-color: var(--light-bg);
+
 }
 
 @media screen and (max-width: 900px) {

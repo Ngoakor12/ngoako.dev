@@ -10,6 +10,7 @@ import {
   homeIcon,
   linkedinIcon,
 } from "../svgs";
+import SkipSectionButton from "./SkipSectionButton";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,8 @@ function Navigation() {
 
   return (
     <header className="nav-wrapper">
-      {/* Menu for smaller screens */} 
+      <SkipSectionButton skipTo={"hero"} children={"Skip Navigation"} />
+      {/* Menu for smaller screens */}
       <div className={`${isMenuOpen ? "menu-open" : "menu-closed"}`}>
         <a href="/" className="active-nav" onClick={toggleMenu}>
           Home
@@ -46,7 +48,7 @@ function Navigation() {
           Contact
         </a>
       </div>
-      <nav className="nav">                
+      <nav className="nav">
         <div className="left-menu">
           {isMenuOpen ? (
             <Tippy content="Close menu">
@@ -75,6 +77,7 @@ function Navigation() {
             </a>
           </Tippy>
         </div>
+        {/* Main desktop navigation */}
         <div className={`main-nav`}>
           <a href="/" className="active-nav">
             Home
@@ -82,13 +85,11 @@ function Navigation() {
           <a href={pathname === "/" ? "#projects" : `${domainUrl}#projects`}>
             Projects
           </a>
-          <a href={pathname === "/" ? "#about" : `${domainUrl}#about`}>
-            About
-          </a>
+          <a href={pathname === "/" ? "#about" : `${domainUrl}#about`}>About</a>
           <a href={pathname === "/" ? "#contact" : `${domainUrl}#contact`}>
             Contact
           </a>
-        </div>         
+        </div>
         <div className="secondary-nav">
           <div className="contact-options">
             <Tippy content="Linkedin profile">
