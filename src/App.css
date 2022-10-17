@@ -1336,6 +1336,9 @@ button {
 }
 @media screen and (max-width: 600px) {
   .skip-section-btn-wrapper {
-    margin-top: 0.8em;
+    margin-top: 0;
+  }
+  .skip-section-btn-wrapper {
+    margin-left: 0%;
   }
 }
