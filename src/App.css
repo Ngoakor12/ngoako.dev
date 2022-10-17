@@ -89,7 +89,7 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   height: 60px;
   z-index: 9;
@@ -1327,12 +1327,18 @@ button {
 }
 
 @media screen and (max-width: 900px) {
+  .nav-wrapper{
+    position: fixed;
+  }
   .skip-section-btn-wrapper {
     margin-left: 6%;
   }
 }
 @media screen and (max-width: 600px) {
   .skip-section-btn-wrapper {
-    margin-top: 0.8em;
+    margin-top: 0;
+  }
+  .skip-section-btn-wrapper {
+    margin-left: 0%;
   }
 }
