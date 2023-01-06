@@ -1,6 +1,8 @@
-import cv from "./assets/ngoako-cv.pdf";
 import { useContext, useEffect } from "react";
 import { Context } from "../Context";
+
+const CV_URL =
+  "https://drive.google.com/file/d/1RjQSRgqd8p-iRrbJkah5FR4chgpeMnLf/view?usp=sharing";
 
 function About() {
   const { aboutContent, urlFor, BlockContent, serializers, setPageTitle } =
@@ -33,7 +35,7 @@ function About() {
               />
             </div>
             <a
-              href={cv}
+              href={CV_URL}
               target="_blank"
               rel="noreferrer"
               className="primary-btn"
