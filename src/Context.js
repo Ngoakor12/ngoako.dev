@@ -128,8 +128,6 @@ function ContextProvider({ children }) {
     return link === "https://www.example.com" ? "#" : link;
   }
 
-  console.log(cvUrl);
-
   return (
     <Context.Provider
       value={{
