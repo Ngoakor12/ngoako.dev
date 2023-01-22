@@ -48,7 +48,7 @@ function Project({ project, urlFor }) {
       </div>
     </article>
   ) : (
-    <p>Loading 2...</p>
+    <p>Loading...</p>
   );
 }
 

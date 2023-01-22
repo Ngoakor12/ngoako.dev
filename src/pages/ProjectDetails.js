@@ -77,7 +77,7 @@ function ProjectDetails() {
           {project.details.map(
             (detail, index, array) =>
               detail.body.length && (
-                <div className="project-detail">
+                <div className="project-detail" key={`${detail.name}_${index}`}>
                   <div className="project-detail-details">
                     <h2>{detail.name}</h2>
                     <div>
