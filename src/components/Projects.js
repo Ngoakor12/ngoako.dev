@@ -1,5 +1,5 @@
+import React, { useEffect, useContext } from "react";
 import ProjectsList from "./ProjectsList";
-import { useEffect, useContext } from "react";
 import { Context } from "../Context";
 import SkipSectionButton from "./SkipSectionButton";
 
@@ -13,7 +13,7 @@ function Projects() {
 
   return (
     <div className="section-wrapper">
-      <SkipSectionButton skipTo={"skills"} children={"Skip Projects"} />     
+      <SkipSectionButton skipTo={"skills"} children={"Skip Projects"} />
       <section className="projects" id="projects">
         <header className="projects-header">
           <h2 className="projects-header-title">Projects</h2>

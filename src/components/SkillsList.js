@@ -1,8 +1,10 @@
+import React from "react";
+
 function SkillsList({ skills }) {
   return (
     <section className="skills-list">
       {skills.map((skill, idx, array) => {
-        const years = (new Date()).getFullYear() - skill.startYear;
+        const years = new Date().getFullYear() - skill.startYear;
 
         return (
           <div key={skill.name} className="skill">

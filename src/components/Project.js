@@ -1,3 +1,4 @@
+import React from "react";
 import ProjectButtons from "./ProjectButtons";
 import { individualTypeIcon } from "../svgs";
 import { groupTypeIcon } from "../svgs";

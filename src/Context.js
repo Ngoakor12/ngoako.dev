@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import sanityClient from "./client";
 import urlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
@@ -39,7 +39,14 @@ function ContextProvider({ children }) {
   const serializers = {
     types: {
       image: ({ node }) => {
-        return <img src={urlFor(node.asset).width(200).url()} alt="" />;
+        return (
+          <img
+            src={urlFor(node.asset)
+              .width(200)
+              .url()}
+            alt=""
+          />
+        );
       },
     },
   };

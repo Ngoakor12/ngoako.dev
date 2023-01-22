@@ -1,5 +1,5 @@
+import React, { useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 import { backArrowIcon, liveIcon, codeIcon } from "../svgs";
 

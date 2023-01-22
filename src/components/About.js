@@ -1,12 +1,17 @@
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../Context";
 
 const CV_URL =
   "https://drive.google.com/file/d/1RjQSRgqd8p-iRrbJkah5FR4chgpeMnLf/view?usp=sharing";
 
 function About() {
-  const { aboutContent, urlFor, BlockContent, serializers, setPageTitle } =
-    useContext(Context);
+  const {
+    aboutContent,
+    urlFor,
+    BlockContent,
+    serializers,
+    setPageTitle,
+  } = useContext(Context);
 
   useEffect(() => {
     setPageTitle("About | Ngoako Ramokgopa");
