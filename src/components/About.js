@@ -1,9 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../Context";
 
-const CV_URL =
-  "https://drive.google.com/file/d/1RjQSRgqd8p-iRrbJkah5FR4chgpeMnLf/view?usp=sharing";
-
 function About() {
   const {
     aboutContent,
@@ -11,6 +8,7 @@ function About() {
     BlockContent,
     serializers,
     setPageTitle,
+    cvUrl,
   } = useContext(Context);
 
   useEffect(() => {
@@ -40,7 +38,7 @@ function About() {
               />
             </div>
             <a
-              href={CV_URL}
+              href={cvUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="primary-btn"

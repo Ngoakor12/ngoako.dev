@@ -7,6 +7,7 @@ const Context = createContext();
 
 function ContextProvider({ children }) {
   const [projects, setProjects] = useState([]);
+  const [cvUrl, setCvUrl] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [aboutContent, setAboutContent] = useState(null);
   const [pageTitle, setPageTitle] = useState(
@@ -15,12 +16,14 @@ function ContextProvider({ children }) {
 
   useEffect(() => {
     async function initialFetchAndSet() {
-      const [aboutContent, projects] = await Promise.all([
+      const [aboutContent, projects, cv] = await Promise.all([
         getAboutContent(),
         getAndSetProjects(),
+        getCV(),
       ]);
       setAboutContent(aboutContent[0]);
       setProjects(projects);
+      setCvUrl(cv[0].cvUrl);
       setIsLoading(false);
     }
     initialFetchAndSet();
@@ -108,9 +111,24 @@ function ContextProvider({ children }) {
     }
   }
 
+  async function getCV() {
+    const query = `*[_type == "CV"]{
+      cvUrl
+    }`;
+    try {
+      const response = await sanityClient.fetch(query);
+      const data = await response;
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   function isDefaultLink(link) {
     return link === "https://www.example.com" ? "#" : link;
   }
+
+  console.log(cvUrl);
 
   return (
     <Context.Provider
@@ -118,6 +136,7 @@ function ContextProvider({ children }) {
         isLoading,
         projects,
         aboutContent,
+        cvUrl,
         urlFor,
         serializers,
         sanityClient,
