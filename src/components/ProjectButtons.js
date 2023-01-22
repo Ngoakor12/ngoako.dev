@@ -25,7 +25,7 @@ function ProjectButtons({ project }) {
               isDefaultLink(project.links.live) === "#" ? "disabled-link" : ""
             }`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             data-tippy-content="Live project"
             aria-label="Live project"
             role="button"
@@ -40,7 +40,7 @@ function ProjectButtons({ project }) {
               isDefaultLink(project.links.live) === "#" ? "disabled-link" : ""
             }`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             data-tippy-content="Code repository"
             aria-label="Code repository"
             role="button"

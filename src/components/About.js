@@ -42,7 +42,7 @@ function About() {
             <a
               href={CV_URL}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="primary-btn"
             >
               View CV

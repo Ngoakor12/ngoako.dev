@@ -42,7 +42,7 @@ function ProjectDetails() {
                       : ""
                   }`}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   role="button"
                 >
                   Live project
@@ -59,7 +59,7 @@ function ProjectDetails() {
                       : ""
                   }`}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   role="button"
                 >
                   Code repository

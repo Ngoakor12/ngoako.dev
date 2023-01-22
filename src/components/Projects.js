@@ -22,7 +22,7 @@ function Projects() {
             <a
               href="https://github.com/Ngoakor12"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               View more on my github.
             </a>
