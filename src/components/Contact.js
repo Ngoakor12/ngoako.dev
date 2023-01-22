@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../Context";
 import { mailIcon } from "../svgs";
 

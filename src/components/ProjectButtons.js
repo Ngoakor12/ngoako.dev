@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
@@ -25,7 +25,7 @@ function ProjectButtons({ project }) {
               isDefaultLink(project.links.live) === "#" ? "disabled-link" : ""
             }`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             data-tippy-content="Live project"
             aria-label="Live project"
             role="button"
@@ -40,7 +40,7 @@ function ProjectButtons({ project }) {
               isDefaultLink(project.links.live) === "#" ? "disabled-link" : ""
             }`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             data-tippy-content="Code repository"
             aria-label="Code repository"
             role="button"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
 import { useLocation } from "react-router-dom";
@@ -96,7 +96,7 @@ function Navigation() {
               <a
                 href="https://www.linkedin.com/in/ngoako-ramokgopa-07b65012a/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Linkedin profile"
               >
                 {linkedinIcon}
@@ -106,7 +106,7 @@ function Navigation() {
               <a
                 href="mailto:ngoakor12@gmail.com"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Send email"
               >
                 {mailIcon}
@@ -116,7 +116,7 @@ function Navigation() {
               <a
                 href="https://github.com/Ngoakor12"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Github profile"
               >
                 {githubIcon}
