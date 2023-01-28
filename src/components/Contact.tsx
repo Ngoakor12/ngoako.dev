@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Context } from "../Context";
 import { mailIcon } from "../svgs";
 
@@ -16,7 +16,9 @@ function Contact() {
     // eslint-disable-next-line
   }, []);
 
-  function handleChange(e) {
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
     const { name } = e.target;
     setForm((prevForm) => {
       return {
