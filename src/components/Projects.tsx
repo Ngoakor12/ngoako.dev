@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import ProjectsList from "./ProjectsList";
 import { Context } from "../AppContext";
 import SkipSectionButton from "./SkipSectionButton";

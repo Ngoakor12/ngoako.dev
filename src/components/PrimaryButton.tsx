@@ -1,4 +1,4 @@
-function PrimaryButton({ children }) {
+function PrimaryButton({ children }: { children: React.ReactNode }) {
   return <button className="primary-btn">{children}</button>;
 }
 

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { Context } from "../AppContext";
+import { useContext, useEffect } from "react";
+import { Context } from "../Context";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Hero from "../components/Hero";

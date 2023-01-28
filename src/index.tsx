@@ -5,8 +5,8 @@ import App from "./App";
 import ScrollToTop from "./components/ScrollToTop";
 import { ContextProvider } from "./AppContext";
 
-const container = document.getElementById("root");
-const root = createRoot(container as Element);
+const container = document.getElementById("root")!;
+const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Router>
