@@ -12,23 +12,13 @@ type Project = {
   links: string,
   order: number,
   type: string,
-  // details,
-  // coverImage{
-  //   alt,
-  //   image{
-  //     asset{
-  //       _ref
-  //     }
-  //   }
-  // },
-  // mainImage{
-  //   alt,
-  //   image{
-  //     asset{
-  //       _ref
-  //     }
-  //   }
-  // },
+  details: {
+    order: number,
+    name: string,
+    body: string
+  }
+  coverImage: any
+  mainImage: any
 }
 
 type About = {
