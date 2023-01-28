@@ -1,11 +1,61 @@
 import React, { createContext, useState, useEffect } from "react";
-import sanityClient from "./client";
+import sanityClient from "./sanityClient";
 import urlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 
-const Context = createContext();
 
-function ContextProvider({ children }) {
+type Detail = {
+  order: number,
+  name: string,
+  body: string
+}
+
+export type Project = {
+  title?: string,
+  slug?: {
+    current: string
+  },
+  description?: string,
+  technologies?: string[],
+  links?: {
+    live: string,
+    code: string,
+  },
+  order?: number,
+  type?: string,
+  details?: Detail[]
+  coverImage?: any
+  mainImage?: any
+}
+
+type About = {
+  aboutImage: {},
+  body: string
+}
+
+export type AppContextType = {
+  isLoading?: boolean
+  projects?: Project[]
+  aboutContent?: About | any,
+  cvUrl?: CV,
+  urlFor?: any,
+  serializers?: any,
+  sanityClient?: any,
+  BlockContent?: any,
+  setPageTitle?: any,
+  isDefaultLink?: any,
+}
+
+
+type CV = string
+
+const Context = createContext<AppContextType>({});
+
+type ContextProps = {
+  children?: React.ReactElement[]
+}
+
+function ContextProvider({ children }: ContextProps) {
   const [projects, setProjects] = useState([]);
   const [cvUrl, setCvUrl] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +83,7 @@ function ContextProvider({ children }) {
     document.title = pageTitle;
   }, [pageTitle]);
 
-  function urlFor(source) {
+  function urlFor(source: {}) {
     return urlBuilder({ projectId: "542oyksl", dataset: "production" }).image(
       source
     );
@@ -41,7 +91,8 @@ function ContextProvider({ children }) {
 
   const serializers = {
     types: {
-      image: ({ node }) => {
+      image: (imageProp: { node: { asset: string } }) => {
+        const node = imageProp.node
         return (
           <img
             src={urlFor(node.asset)
@@ -124,7 +175,7 @@ function ContextProvider({ children }) {
     }
   }
 
-  function isDefaultLink(link) {
+  function isDefaultLink(link: string) {
     return link === "https://www.example.com" ? "#" : link;
   }
 

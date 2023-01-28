@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
-import { Context } from "../Context";
+import { Context, Project } from "../AppContext";
 import { codeIcon, liveIcon } from "../svgs";
 
-function ProjectButtons({ project }) {
+function ProjectButtons({ project }: { project: Project }) {
   const { pathname } = useLocation();
   const { isDefaultLink } = useContext(Context);
 
@@ -13,17 +13,16 @@ function ProjectButtons({ project }) {
     <article className="project-btns">
       <Link
         className="primary-btn"
-        to={`${pathname === "/" ? "projects/" : ""}${project.slug.current}`}
+        to={`${pathname === "/" ? "projects/" : ""}${project.slug?.current}`}
       >
         View project
       </Link>
       <div className="secondary-btns">
         <Tippy content="Live project">
           <a
-            href={isDefaultLink(project.links.live)}
-            className={`live-btn ${
-              isDefaultLink(project.links.live) === "#" ? "disabled-link" : ""
-            }`}
+            href={isDefaultLink(project.links?.live)}
+            className={`live-btn ${isDefaultLink(project.links?.live) === "#" ? "disabled-link" : ""
+              }`}
             target="_blank"
             rel="noopener noreferrer"
             data-tippy-content="Live project"
@@ -35,10 +34,9 @@ function ProjectButtons({ project }) {
         </Tippy>
         <Tippy content="Code repository">
           <a
-            href={isDefaultLink(project.links.code)}
-            className={`code-btn ${
-              isDefaultLink(project.links.live) === "#" ? "disabled-link" : ""
-            }`}
+            href={isDefaultLink(project.links?.code)}
+            className={`code-btn ${isDefaultLink(project.links?.live) === "#" ? "disabled-link" : ""
+              }`}
             target="_blank"
             rel="noopener noreferrer"
             data-tippy-content="Code repository"

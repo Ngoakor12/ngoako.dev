@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Context } from "../Context";
+import { Context } from "../AppContext";
 import { backArrowIcon, liveIcon, codeIcon } from "../svgs";
 
 function ProjectDetails() {
@@ -14,7 +14,7 @@ function ProjectDetails() {
   } = useContext(Context);
   const navigate = useNavigate();
   const { slug } = useParams();
-  const project = projects.find((project) => project.slug.current === slug);
+  const project = projects?.find((project) => project.slug?.current === slug);
 
   useEffect(() => {
     if (project) setPageTitle(`${project.title} | Project`);
@@ -35,12 +35,11 @@ function ProjectDetails() {
             <div className="project-links">
               <div className="project-link">
                 <a
-                  href={isDefaultLink(project.links.live)}
-                  className={`live-site ${
-                    isDefaultLink(project.links.live) === "#"
-                      ? "disabled-link"
-                      : ""
-                  }`}
+                  href={isDefaultLink(project.links?.live)}
+                  className={`live-site ${isDefaultLink(project.links?.live) === "#"
+                    ? "disabled-link"
+                    : ""
+                    }`}
                   target="_blank"
                   rel="noopener noreferrer"
                   role="button"
@@ -52,12 +51,11 @@ function ProjectDetails() {
               </div>
               <div className="project-link">
                 <a
-                  href={isDefaultLink(project.links.code)}
-                  className={`source-code ${
-                    isDefaultLink(project.links.code) === "#"
-                      ? "disabled-link"
-                      : ""
-                  }`}
+                  href={isDefaultLink(project.links?.code)}
+                  className={`source-code ${isDefaultLink(project.links?.code) === "#"
+                    ? "disabled-link"
+                    : ""
+                    }`}
                   target="_blank"
                   rel="noopener noreferrer"
                   role="button"
@@ -74,7 +72,7 @@ function ProjectDetails() {
             src={urlFor(project.mainImage.image.asset)}
             alt={project.mainImage.alt}
           />
-          {project.details.map(
+          {project.details?.map(
             (detail, index, array) =>
               detail.body.length && (
                 <div className="project-detail" key={`${detail.name}_${index}`}>

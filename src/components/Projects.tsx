@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import ProjectsList from "./ProjectsList";
-import { Context } from "../Context";
+import { Context } from "../AppContext";
 import SkipSectionButton from "./SkipSectionButton";
 
 function Projects() {

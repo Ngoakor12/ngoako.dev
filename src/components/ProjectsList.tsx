@@ -1,6 +1,6 @@
 import Project from "./Project";
 import React, { useContext } from "react";
-import { Context } from "../Context";
+import { Context } from "../AppContext";
 
 function ProjectsList() {
   const { projects, isLoading, urlFor } = useContext(Context);
@@ -8,7 +8,7 @@ function ProjectsList() {
   return (
     <section className="project-list">
       {!isLoading ? (
-        projects.map((project) => {
+        projects?.map((project) => {
           return (
             <Project key={project.title} project={project} urlFor={urlFor} />
           );
