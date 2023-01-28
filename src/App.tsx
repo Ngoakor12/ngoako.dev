@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -13,7 +12,6 @@ function App() {
       <Routes>
         <Route
           path="/"
-          exact
           element={
             <>
               <Navigation />
