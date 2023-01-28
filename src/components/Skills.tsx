@@ -1,5 +1,5 @@
 import SkillsList from "./SkillsList";
-import skillsData from "../skills-data";
+import skillsData from "../skillsData";
 
 function Skills() {
   return (

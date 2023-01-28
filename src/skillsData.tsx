@@ -16,7 +16,7 @@ type Skill = {
   startYear: number
 }
 
-type Skills = Skill[]
+export type Skills = Skill[]
 
 type SkillTypes = {
   [skill: string]: Skills

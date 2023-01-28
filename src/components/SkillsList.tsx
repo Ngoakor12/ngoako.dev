@@ -1,6 +1,7 @@
 import React from "react";
+import { Skills } from "../skillsData";
 
-function SkillsList({ skills }) {
+function SkillsList({ skills }: { skills: Skills }) {
   return (
     <section className="skills-list">
       {skills.map((skill, idx, array) => {

@@ -3,8 +3,9 @@ import ProjectButtons from "./ProjectButtons";
 import { individualTypeIcon } from "../svgs";
 import { groupTypeIcon } from "../svgs";
 import Tippy from "@tippyjs/react";
+import { Project as ProjectType } from "../AppContext";
 
-function Project({ project, urlFor }) {
+function Project({ project, urlFor }: { project: ProjectType, urlFor: any }) {
   return project ? (
     <article key={project.title} className="project">
       <div className="project-picture-wrapper">
@@ -36,7 +37,7 @@ function Project({ project, urlFor }) {
         </div>
         <p className="project-description">{project.description}</p>
         <article className="technologies">
-          {project.technologies.map((technology) => {
+          {project.technologies?.map((technology) => {
             return (
               <div key={technology} className="technology">
                 {technology}

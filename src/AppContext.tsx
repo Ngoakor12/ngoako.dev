@@ -4,21 +4,28 @@ import urlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 
 
-type Project = {
-  title: string,
-  slug: string,
-  description: string,
-  technologies: string[],
-  links: string,
+type Detail = {
   order: number,
-  type: string,
-  details: {
-    order: number,
-    name: string,
-    body: string
-  }
-  coverImage: any
-  mainImage: any
+  name: string,
+  body: string
+}
+
+export type Project = {
+  title?: string,
+  slug?: {
+    current: string
+  },
+  description?: string,
+  technologies?: string[],
+  links?: {
+    live: string,
+    code: string,
+  },
+  order?: number,
+  type?: string,
+  details?: Detail[]
+  coverImage?: any
+  mainImage?: any
 }
 
 type About = {
