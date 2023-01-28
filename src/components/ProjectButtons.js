@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
-import { Context } from "../Context";
+import { Context } from "../AppContext";
 import { codeIcon, liveIcon } from "../svgs";
 
 function ProjectButtons({ project }) {

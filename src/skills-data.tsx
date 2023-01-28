@@ -10,7 +10,19 @@ import {
   jasmineIcon,
 } from "./svgs";
 
-const skillsData = {
+type Skill = {
+  name: string,
+  icon: any,
+  startYear: number
+}
+
+type Skills = Skill[]
+
+type SkillTypes = {
+  [skill: string]: Skills
+}
+
+const skillsData: SkillTypes = {
   frontend: [
     {
       name: "HTML",

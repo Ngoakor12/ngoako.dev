@@ -1,6 +1,6 @@
 import Project from "./Project";
 import React, { useContext } from "react";
-import { Context } from "../Context";
+import { Context } from "../AppContext";
 
 function ProjectsList() {
   const { projects, isLoading, urlFor } = useContext(Context);

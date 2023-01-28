@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Context } from "../Context";
+import { Context } from "../AppContext";
 
 function PageNotFound() {
   const { setPageTitle } = useContext(Context);
