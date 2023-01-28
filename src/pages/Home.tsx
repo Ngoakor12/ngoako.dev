@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 import About from "../components/About";
 import Contact from "../components/Contact";
