@@ -22,26 +22,27 @@ type Project = {
 }
 
 type About = {
-  aboutImage: any,
+  aboutImage: {},
   body: string
 }
 
-type AppContextType = {
-  isLoading: boolean
-  projects: Project[]
-  aboutContent: About | null,
-  cvUrl: CV,
-  urlFor: any,
-  serializers: any,
-  sanityClient: any,
-  BlockContent: any,
-  setPageTitle: any,
-  isDefaultLink: any,
+export type AppContextType = {
+  isLoading?: boolean
+  projects?: Project[]
+  aboutContent?: About | any,
+  cvUrl?: CV,
+  urlFor?: any,
+  serializers?: any,
+  sanityClient?: any,
+  BlockContent?: any,
+  setPageTitle?: any,
+  isDefaultLink?: any,
 }
+
 
 type CV = string
 
-const Context = createContext<AppContextType | null>(null);
+const Context = createContext<AppContextType>({});
 
 type ContextProps = {
   children?: React.ReactElement[]
