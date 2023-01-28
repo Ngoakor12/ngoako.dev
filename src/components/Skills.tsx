@@ -1,4 +1,3 @@
-import React from "react";
 import SkillsList from "./SkillsList";
 import skillsData from "../skills-data";
 
