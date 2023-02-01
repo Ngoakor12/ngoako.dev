@@ -3,57 +3,55 @@ import sanityClient from "./sanityClient";
 import urlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 
-
 type Detail = {
-  order: number,
-  name: string,
-  body: string
-}
+  order: number;
+  name: string;
+  body: string;
+};
 
 export type Project = {
-  title?: string,
+  title?: string;
   slug?: {
-    current: string
-  },
-  description?: string,
-  technologies?: string[],
+    current: string;
+  };
+  description?: string;
+  technologies?: string[];
   links?: {
-    live: string,
-    code: string,
-  },
-  order?: number,
-  type?: string,
-  details?: Detail[]
-  coverImage?: any
-  mainImage?: any
-}
+    live: string;
+    code: string;
+  };
+  order?: number;
+  type?: string;
+  details?: Detail[];
+  coverImage?: any;
+  mainImage?: any;
+};
 
 type About = {
-  aboutImage: {},
-  body: string
-}
+  aboutImage: {};
+  body: string;
+};
 
 export type AppContextType = {
-  isLoading?: boolean
-  projects?: Project[]
-  aboutContent?: About | any,
-  cvUrl?: CV,
-  urlFor?: any,
-  serializers?: any,
-  sanityClient?: any,
-  BlockContent?: any,
-  setPageTitle?: any,
-  isDefaultLink?: any,
-}
+  isLoading?: boolean;
+  projects?: Project[];
+  aboutContent?: About | any;
+  cvUrl?: CV;
+  urlFor?: any;
+  serializers?: any;
+  sanityClient?: any;
+  BlockContent?: any;
+  setPageTitle?: any;
+  isDefaultLink?: any;
+};
 
-
-type CV = string
+type CV = string;
 
 const Context = createContext<AppContextType>({});
 
 type ContextProps = {
-  children?: React.ReactElement[]
-}
+  children?: React.ReactElement[];
+};
 
 function ContextProvider({ children }: ContextProps) {
   const [projects, setProjects] = useState([]);
@@ -92,15 +90,8 @@ function ContextProvider({ children }: ContextProps) {
   const serializers = {
     types: {
       image: (imageProp: { node: { asset: string } }) => {
-        const node = imageProp.node
-        return (
-          <img
-            src={urlFor(node.asset)
-              .width(200)
-              .url()}
-            alt=""
-          />
-        );
+        const node = imageProp.node;
+        return <img src={urlFor(node.asset).width(200).url()} alt="" />;
       },
     },
   };
