@@ -1,77 +1,73 @@
 import React, { createContext, useState, useEffect } from "react";
-import sanityClient from "./sanityClient";
 import urlBuilder from "@sanity/image-url";
-import BlockContent from "@sanity/block-content-to-react";
-
-type Detail = {
-  order: number;
-  name: string;
-  body: string;
-};
-
-export type Project = {
-  title?: string;
-  slug?: {
-    current: string;
-  };
-  description?: string;
-  technologies?: string[];
-  links?: {
-    live: string;
-    code: string;
-  };
-  order?: number;
-  type?: string;
-  details?: Detail[];
-  coverImage?: any;
-  mainImage?: any;
-};
-
-type About = {
-  aboutImage: {};
-  body: string;
-};
+import { Asset, Project } from "./types/Project";
+import { getAboutContent, getProjects, getCV } from "./api/sanity";
+import { About } from "./types/About";
 
 export type AppContextType = {
-  isLoading?: boolean;
-  projects?: Project[];
-  aboutContent?: About | any;
-  cvUrl?: CV;
-  urlFor?: any;
-  serializers?: any;
-  sanityClient?: any;
-  BlockContent?: any;
-  setPageTitle?: any;
-  isDefaultLink?: any;
+  projects: Project[];
+  aboutContent: About | undefined;
+  cvUrl: string;
+  isLoading: boolean;
+  urlFor: (source: Asset) => string;
+  setPageTitle: (title: string) => void;
+  isDefaultLink: (link: string) => string;
 };
 
-type CV = string;
+function urlFor(source: Asset) {
+  console.log(source);
+  return urlBuilder({ projectId: "542oyksl", dataset: "production" })
+    .image(source)
+    .url();
+}
 
-const Context = createContext<AppContextType>({});
+const Context = createContext<AppContextType>({
+  projects: [],
+  aboutContent: undefined,
+  cvUrl: "",
+  isLoading: true,
+  urlFor: urlFor,
+  isDefaultLink: isDefaultLink,
+  setPageTitle: (title: string) => {},
+});
 
 type ContextProps = {
   children?: React.ReactElement[];
 };
 
+function isDefaultLink(link: string) {
+  return link === "https://www.example.com" ? "#" : link;
+}
+
 function ContextProvider({ children }: ContextProps) {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [aboutContent, setAboutContent] = useState<About>();
   const [cvUrl, setCvUrl] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [aboutContent, setAboutContent] = useState(null);
   const [pageTitle, setPageTitle] = useState(
     "Ngoako Ramokgopa | Software Developer"
   );
 
   useEffect(() => {
     async function initialFetchAndSet() {
-      const [aboutContent, projects, cv] = await Promise.all([
+      const [projects, aboutContent, CV] = await Promise.allSettled([
+        getProjects(),
         getAboutContent(),
-        getAndSetProjects(),
         getCV(),
       ]);
-      setAboutContent(aboutContent[0]);
-      setProjects(projects);
-      setCvUrl(cv[0].cvUrl);
+
+      if (projects.status === "fulfilled" && projects.value) {
+        setProjects(projects.value);
+      }
+
+      if (aboutContent.status === "fulfilled" && aboutContent.value) {
+        setAboutContent(aboutContent.value[0]);
+      }
+
+      if (CV.status === "fulfilled" && CV.value) {
+        setCvUrl(CV.value[0].cvUrl);
+      }
+
       setIsLoading(false);
     }
     initialFetchAndSet();
@@ -81,95 +77,6 @@ function ContextProvider({ children }: ContextProps) {
     document.title = pageTitle;
   }, [pageTitle]);
 
-  function urlFor(source: {}) {
-    return urlBuilder({ projectId: "542oyksl", dataset: "production" }).image(
-      source
-    );
-  }
-
-  const serializers = {
-    types: {
-      image: (imageProp: { node: { asset: string } }) => {
-        const node = imageProp.node;
-        return <img src={urlFor(node.asset).width(200).url()} alt="" />;
-      },
-    },
-  };
-
-  async function getAndSetProjects() {
-    const query = `*[_type == "project"]{
-      title,
-      slug{current},
-      description,
-      technologies,
-      links,
-      order,
-      type,
-      details,
-      coverImage{
-        alt,
-        image{
-          asset{
-            _ref
-          }
-        }
-      },
-      mainImage{
-        alt,
-        image{
-          asset{
-            _ref
-          }
-        }
-      },
-    }`;
-    try {
-      const response = await sanityClient.fetch(query);
-      const data = await response;
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function getAboutContent() {
-    const query = `*[_type == "about"]{
-      aboutImage{
-        alt,
-        image{
-          asset{
-            _ref
-          }
-        }
-      },
-      body
-    }`;
-    try {
-      const response = await sanityClient.fetch(query);
-      const data = await response;
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function getCV() {
-    const query = `*[_type == "CV"]{
-      cvUrl
-    }`;
-    try {
-      const response = await sanityClient.fetch(query);
-      const data = await response;
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  function isDefaultLink(link: string) {
-    return link === "https://www.example.com" ? "#" : link;
-  }
-
   return (
     <Context.Provider
       value={{
@@ -178,9 +85,6 @@ function ContextProvider({ children }: ContextProps) {
         aboutContent,
         cvUrl,
         urlFor,
-        serializers,
-        sanityClient,
-        BlockContent,
         setPageTitle,
         isDefaultLink,
       }}

@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProjectButtons from "./ProjectButtons";
 import { individualTypeIcon } from "../svgs";
 import { groupTypeIcon } from "../svgs";
 import Tippy from "@tippyjs/react";
-import { Project as ProjectType } from "../AppContext";
+import { Project as ProjectType } from "../types/Project";
+import { Context } from "../AppContext";
 
-function Project({ project, urlFor }: { project: ProjectType, urlFor: any }) {
+interface ProjectProps {
+  project: ProjectType;
+}
+
+function Project({ project }: ProjectProps) {
+  const { urlFor } = useContext(Context);
+
   return project ? (
     <article key={project.title} className="project">
       <div className="project-picture-wrapper">

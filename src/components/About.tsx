@@ -1,20 +1,13 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../AppContext";
+import { PortableText } from "@portabletext/react";
 
 function About() {
-  const {
-    aboutContent,
-    urlFor,
-    BlockContent,
-    serializers,
-    setPageTitle,
-    cvUrl,
-  } = useContext(Context);
+  const { aboutContent, urlFor, setPageTitle, cvUrl } = useContext(Context);
 
   useEffect(() => {
     setPageTitle("About | Ngoako Ramokgopa");
-    // eslint-disable-next-line
-  }, []);
+  }, [setPageTitle]);
 
   return (
     <section className="about" id="about">
@@ -30,12 +23,7 @@ function About() {
           />
           <div className="about-body">
             <div className="about-text">
-              <BlockContent
-                blocks={aboutContent.body}
-                projectId="542oyksl"
-                dataset="production"
-                serializers={serializers}
-              />
+              <PortableText value={aboutContent.body} />
             </div>
             <a
               href={cvUrl}

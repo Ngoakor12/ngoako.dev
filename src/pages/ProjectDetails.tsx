@@ -2,24 +2,17 @@ import React, { useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Context } from "../AppContext";
 import { backArrowIcon, liveIcon, codeIcon } from "../svgs";
+import { PortableText } from "@portabletext/react";
 
 function ProjectDetails() {
-  const {
-    projects,
-    urlFor,
-    serializers,
-    BlockContent,
-    setPageTitle,
-    isDefaultLink,
-  } = useContext(Context);
+  const { projects, urlFor, setPageTitle, isDefaultLink } = useContext(Context);
   const navigate = useNavigate();
   const { slug } = useParams();
   const project = projects?.find((project) => project.slug?.current === slug);
 
   useEffect(() => {
     if (project) setPageTitle(`${project.title} | Project`);
-    // eslint-disable-next-line
-  }, [projects]);
+  }, [project, setPageTitle]);
 
   return (
     <section className="project-details">
@@ -79,12 +72,7 @@ function ProjectDetails() {
                   <div className="project-detail-details">
                     <h2>{detail.name}</h2>
                     <div>
-                      <BlockContent
-                        blocks={detail.body}
-                        projectId="542oyksl"
-                        dataset="production"
-                        serializers={serializers}
-                      />
+                      <PortableText value={detail.body} />
                     </div>
                   </div>
 
