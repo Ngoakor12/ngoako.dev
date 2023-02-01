@@ -14,13 +14,6 @@ export type AppContextType = {
   isDefaultLink: (link: string) => string;
 };
 
-function urlFor(source: Asset) {
-  console.log(source);
-  return urlBuilder({ projectId: "542oyksl", dataset: "production" })
-    .image(source)
-    .url();
-}
-
 const Context = createContext<AppContextType>({
   projects: [],
   aboutContent: undefined,
@@ -31,13 +24,19 @@ const Context = createContext<AppContextType>({
   setPageTitle: (title: string) => {},
 });
 
-type ContextProps = {
-  children?: React.ReactElement[];
-};
+function urlFor(source: Asset) {
+  return urlBuilder({ projectId: "542oyksl", dataset: "production" })
+    .image(source)
+    .url();
+}
 
 function isDefaultLink(link: string) {
   return link === "https://www.example.com" ? "#" : link;
 }
+
+type ContextProps = {
+  children?: React.ReactElement[];
+};
 
 function ContextProvider({ children }: ContextProps) {
   const [projects, setProjects] = useState<Project[]>([]);
