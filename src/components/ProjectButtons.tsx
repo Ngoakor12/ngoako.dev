@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // optional
-import { Context, Project } from "../AppContext";
+import { Context } from "../AppContext";
 import { codeIcon, liveIcon } from "../svgs";
+import { Project } from "../types/Project";
 
 function ProjectButtons({ project }: { project: Project }) {
   const { pathname } = useLocation();
