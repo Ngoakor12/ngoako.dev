@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Context } from "../AppContext";
 import { backArrowIcon, liveIcon, codeIcon } from "../svgs";
 import { PortableText } from "@portabletext/react";
+import { PAGE_TITLE } from "../constants";
 
 function ProjectDetails() {
   const { projects, urlFor, setPageTitle, isDefaultLink } = useContext(Context);
@@ -12,6 +13,7 @@ function ProjectDetails() {
 
   useEffect(() => {
     if (project) setPageTitle(`${project.title} | Project`);
+    else setPageTitle(PAGE_TITLE.DEFAULT)
   }, [project, setPageTitle]);
 
   return (

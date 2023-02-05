@@ -3,6 +3,10 @@ import urlBuilder from "@sanity/image-url";
 import { Asset, Project } from "./types/Project";
 import { getAboutContent, getProjects, getCV } from "./api/sanity";
 import { About } from "./types/About";
+import { clientConfig } from "./sanityClient";
+import { PAGE_TITLE } from "./constants";
+
+const { projectId, dataset } = clientConfig
 
 export type AppContextType = {
   projects: Project[];
@@ -25,7 +29,7 @@ const Context = createContext<AppContextType>({
 });
 
 function urlFor(source: Asset) {
-  return urlBuilder({ projectId: "542oyksl", dataset: "production" })
+  return urlBuilder({ projectId, dataset })
     .image(source)
     .url();
 }
@@ -44,7 +48,7 @@ function ContextProvider({ children }: ContextProps) {
   const [cvUrl, setCvUrl] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [pageTitle, setPageTitle] = useState(
-    "Ngoako Ramokgopa | Software Developer"
+    PAGE_TITLE.HOME
   );
 
   useEffect(() => {

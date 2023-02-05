@@ -1,15 +1,7 @@
-import { useEffect, useContext } from "react";
 import ProjectsList from "./ProjectsList";
-import { Context } from "../AppContext";
 import SkipSectionButton from "./SkipSectionButton";
 
 function Projects() {
-  const { setPageTitle } = useContext(Context);
-
-  useEffect(() => {
-    setPageTitle("Projects | Ngoako Ramokgopa");
-    // eslint-disable-next-line
-  }, []);
 
   return (
     <div className="section-wrapper">

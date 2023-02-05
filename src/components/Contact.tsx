@@ -1,9 +1,7 @@
-import { useState, useEffect, useContext } from "react";
-import { Context } from "../AppContext";
+import { useState } from "react";
 import { mailIcon } from "../svgs";
 
 function Contact() {
-  const { setPageTitle } = useContext(Context);
 
   const [form, setForm] = useState({
     name: "",
@@ -11,10 +9,7 @@ function Contact() {
     message: "",
   });
 
-  useEffect(() => {
-    setPageTitle("Contact | Ngoako Ramokgopa");
-    // eslint-disable-next-line
-  }, []);
+
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
