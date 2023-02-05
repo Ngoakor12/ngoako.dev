@@ -5,13 +5,14 @@ import Home from "./pages/Home";
 import Navigation from "./components/Navigation";
 import ProjectDetails from "./pages/ProjectDetails";
 import NotFoundPage from "./pages/NotFoundPage";
+import { PATH } from "./constants";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route
-          path="/"
+          path={PATH.HOME}
           element={
             <>
               <Navigation />
@@ -22,7 +23,7 @@ function App() {
           }
         />
         <Route
-          path="/projects/:slug"
+          path={PATH.PROJECT_DETAILS}
           element={
             <>
               <Navigation />
