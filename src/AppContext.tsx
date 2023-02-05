@@ -21,7 +21,7 @@ const Context = createContext<AppContextType>({
   isLoading: true,
   urlFor: urlFor,
   isDefaultLink: isDefaultLink,
-  setPageTitle: (title: string) => {},
+  setPageTitle: () => { },
 });
 
 function urlFor(source: Asset) {
