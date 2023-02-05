@@ -5,14 +5,14 @@ import Contact from "../components/Contact";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
+import { PAGE_TITLE } from "../constants";
 
 function Home() {
   const { setPageTitle } = useContext(Context);
 
   useEffect(() => {
-    setPageTitle("Ngoako Ramokgopa | Software Developer");
-    // eslint-disable-next-line
-  }, []);
+    setPageTitle(PAGE_TITLE.HOME);
+  }, [setPageTitle]);
 
   return (
     <>

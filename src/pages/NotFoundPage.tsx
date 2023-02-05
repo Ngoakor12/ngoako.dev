@@ -1,13 +1,14 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../AppContext";
+import { PAGE_TITLE } from "../constants";
 
 function PageNotFound() {
   const { setPageTitle } = useContext(Context);
 
   useEffect(() => {
-    setPageTitle("Page not found | Ngoako Ramokgopa");
-    // eslint-disable-next-line
-  }, []);
+    setPageTitle(PAGE_TITLE.NOT_FOUND);
+  }, [setPageTitle]);
+
   return (
     <section className="not-found-page">
       <h1>404</h1>

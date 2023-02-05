@@ -1,13 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Context } from "../AppContext";
 import { PortableText } from "@portabletext/react";
 
 function About() {
-  const { aboutContent, urlFor, setPageTitle, cvUrl } = useContext(Context);
+  const { aboutContent, urlFor, cvUrl } = useContext(Context);
 
-  useEffect(() => {
-    setPageTitle("About | Ngoako Ramokgopa");
-  }, [setPageTitle]);
+
 
   return (
     <section className="about" id="about">
