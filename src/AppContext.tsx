@@ -3,6 +3,9 @@ import urlBuilder from "@sanity/image-url";
 import { Asset, Project } from "./types/Project";
 import { getAboutContent, getProjects, getCV } from "./api/sanity";
 import { About } from "./types/About";
+import { clientConfig } from "./sanityClient";
+
+const { projectId, dataset } = clientConfig
 
 export type AppContextType = {
   projects: Project[];
@@ -25,7 +28,7 @@ const Context = createContext<AppContextType>({
 });
 
 function urlFor(source: Asset) {
-  return urlBuilder({ projectId: "542oyksl", dataset: "production" })
+  return urlBuilder({ projectId, dataset })
     .image(source)
     .url();
 }
