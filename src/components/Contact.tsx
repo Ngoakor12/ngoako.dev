@@ -2,14 +2,11 @@ import { useState } from "react";
 import { mailIcon } from "../svgs";
 
 function Contact() {
-
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
-
-
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
