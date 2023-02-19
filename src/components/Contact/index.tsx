@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { mailIcon } from "../svgs";
+import { mailIcon } from "../../svgs";
 
 function Contact() {
   const [form, setForm] = useState({
