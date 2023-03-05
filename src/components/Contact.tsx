@@ -1,21 +1,33 @@
 import { mailIcon } from "../svgs";
 import { useForm, SubmitHandler } from "react-hook-form";
 import InputWrapper from "./InputWrapper";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import InputErrorMessage from "./InputErrorMessage";
 
-interface FormInput {
-  email: string;
-  name: string;
-  message: string;
-}
+const schema = yup
+  .object({
+    name: yup.string().required("Please enter your name"),
+    email: yup
+      .string()
+      .email("Please enter valid email")
+      .required("Please enter your email address"),
+    message: yup.string().required("Please enter your message"),
+  })
+  .required();
+
+type FormData = yup.InferType<typeof schema>;
 
 function Contact() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormInput>();
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
 
-  const onSubmit: SubmitHandler<FormInput> = async (data) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     // Sending data to formspree.io
     const response = await fetch("https://formspree.io/f/xqknpbgw", {
       method: "POST",
@@ -50,17 +62,17 @@ function Contact() {
         <InputWrapper>
           <label htmlFor="name">Your name</label>
           <input type="text" {...register("name", { required: true })} />
-          {errors.name && <span>This is a required field</span>}
+          <InputErrorMessage message={errors.name?.message} />
         </InputWrapper>
         <InputWrapper>
           <label htmlFor="email">Your email</label>
-          <input type="email" {...register("email", { required: true })} />
-          {errors.email && <span>This is a required field</span>}
+          <input {...register("email", { required: true })} />
+          <InputErrorMessage message={errors.email?.message} />
         </InputWrapper>
         <InputWrapper>
           <label htmlFor="message">Message</label>
           <textarea {...register("message", { required: true })}></textarea>
-          {errors.message && <span>This is a required field</span>}
+          <InputErrorMessage message={errors.message?.message} />
         </InputWrapper>
         <button className="primary-btn send-message" type="submit">
           Send message
