@@ -21,6 +21,7 @@ html {
   --project-border: #aab4be;
   --form-input-bg-color: #eaeef3;
   --form-input-border-color: #6f6f6f;
+  --form-error-message-color: #d22222;
 }
 
 #root {
@@ -893,8 +894,7 @@ button {
   flex-direction: column;
 }
 
-.contact-form-field > input[type="text"],
-.contact-form-field > input[type="email"],
+.contact-form-field > input,
 .contact-form-field > textarea {
   color: var(--dark-text);
   padding: 10px;
@@ -902,8 +902,7 @@ button {
   font-size: 1.8rem;
 }
 
-.contact-form-field > input[type="text"],
-.contact-form-field > input[type="email"] {
+.contact-form-field > input {
   /* display: flex;
   flex-direction: column; */
   min-height: 40px;
@@ -926,8 +925,7 @@ button {
 .contact-form-field > textarea:focus-visible {
 } */
 
-.contact-form-field > input[type="text"]:focus,
-.contact-form-field > input[type="email"]:focus,
+.contact-form-field > input:focus,
 .contact-form-field > textarea:focus {
   border-color: var(--secondary-blue);
   outline: 0;
@@ -935,8 +933,7 @@ button {
   background-color: #ffffff;
 }
 
-.contact-form-field > input[type="text"]:hover,
-.contact-form-field > input[type="email"]:hover,
+.contact-form-field > input:hover,
 .contact-form-field > textarea:hover {
   border-color: var(--secondary-blue);
 }
@@ -1341,4 +1338,10 @@ button {
   .skip-section-btn-wrapper {
     margin-left: 0%;
   }
+}
+
+.form-error-message {
+  font-size: 1.5rem;
+  margin-top: 4px;
+  color: var(--form-error-message-color);
 }
