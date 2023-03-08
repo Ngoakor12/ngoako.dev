@@ -42,7 +42,7 @@ function Contact() {
     const result = await response.json();
 
     // Redirecting to formspree.io success page
-    window.location.replace(`https://formspree.io${result.next}`);
+    window.location.href = `https://formspree.io${result.next}`
   };
 
   return (
