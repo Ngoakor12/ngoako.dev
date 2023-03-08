@@ -1,6 +1,5 @@
 import { mailIcon } from "../svgs";
 import { useForm, SubmitHandler } from "react-hook-form";
-import InputWrapper from "./InputWrapper";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import InputErrorMessage from "./InputErrorMessage";
@@ -42,7 +41,7 @@ function Contact() {
     const result = await response.json();
 
     // Redirecting to formspree.io success page
-    window.location.href = `https://formspree.io${result.next}`
+    window.location.href = `https://formspree.io${result.next}`;
   };
 
   return (
@@ -59,21 +58,21 @@ function Contact() {
           <span className="contact-form-email-icon">{mailIcon}</span>
           ngoakor12@gmail.com
         </p>
-        <InputWrapper>
+        <div className="contact-form-field">
           <label htmlFor="name">Your name</label>
           <input type="text" {...register("name", { required: true })} />
           <InputErrorMessage message={errors.name?.message} />
-        </InputWrapper>
-        <InputWrapper>
+        </div>
+        <div className="contact-form-field">
           <label htmlFor="email">Your email</label>
           <input {...register("email", { required: true })} />
           <InputErrorMessage message={errors.email?.message} />
-        </InputWrapper>
-        <InputWrapper>
+        </div>
+        <div className="contact-form-field">
           <label htmlFor="message">Message</label>
           <textarea {...register("message", { required: true })}></textarea>
           <InputErrorMessage message={errors.message?.message} />
-        </InputWrapper>
+        </div>
         <button className="primary-btn send-message" type="submit">
           Send message
         </button>
