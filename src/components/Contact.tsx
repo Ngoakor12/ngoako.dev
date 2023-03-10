@@ -20,7 +20,7 @@ type FormData = yup.InferType<typeof schema>;
 function Contact() {
   const {
     register,
-    handleSubmit,
+    handleSubmit, reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
@@ -38,10 +38,22 @@ function Contact() {
       }),
     });
 
-    const result = await response.json();
+    try {
+      const result = await response.json();
+      if (result.ok) {
+        // Clear form
+        reset()
 
-    // Redirecting to formspree.io success page
-    window.location.href = `https://formspree.io${result.next}`;
+        // Redirecting to formspree.io success page
+        window.location.href = `https://formspree.io${result.next}`;
+      } else {
+        throw new Error("Form failed to send", result)
+      }
+    } catch (error) {
+      console.log("Something went wrong submitting the form", error)
+    }
+
+
   };
 
   return (
