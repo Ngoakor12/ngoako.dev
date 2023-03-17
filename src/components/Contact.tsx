@@ -72,17 +72,17 @@ function Contact() {
         </p>
         <div className="contact-form-field">
           <label htmlFor="name">Your name</label>
-          <input type="text" {...register("name", { required: true })} />
+          <input type="text" {...register("name", { required: true })} id="name" />
           <InputErrorMessage message={errors.name?.message} />
         </div>
         <div className="contact-form-field">
           <label htmlFor="email">Your email</label>
-          <input {...register("email", { required: true })} />
+          <input {...register("email", { required: true })} id="email" />
           <InputErrorMessage message={errors.email?.message} />
         </div>
         <div className="contact-form-field">
           <label htmlFor="message">Message</label>
-          <textarea {...register("message", { required: true })}></textarea>
+          <textarea {...register("message", { required: true })} id="message"></textarea>
           <InputErrorMessage message={errors.message?.message} />
         </div>
         <button className="primary-btn send-message" type="submit">
