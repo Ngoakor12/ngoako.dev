@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Context } from "../AppContext";
-import { backArrowIcon, liveIcon, codeIcon } from "../svgs";
+import { backArrowIcon, liveIcon, codeIcon, individualTypeIcon, groupTypeIcon } from "../svgs";
 import { PortableText } from "@portabletext/react";
 import { PAGE_TITLE } from "../constants";
+import Tippy from "@tippyjs/react";
 
 function ProjectDetails() {
   const { projects, urlFor, setPageTitle, isDefaultLink } = useContext(Context);
@@ -25,7 +26,20 @@ function ProjectDetails() {
               <span className="projects-back-btn-icon">{backArrowIcon}</span>
               Back to projects
             </button>
-            <h1 className="project-details-heading">{project.title}</h1>
+            <h1 className="project-details-heading"><span>{project.title}</span> <Tippy
+              content={
+                project.type === "individual"
+                  ? "Individual project"
+                  : "Group project"
+              }
+            >
+              <span className="project-type">
+                {project.type !== undefined &&
+                  (project.type === "individual"
+                    ? individualTypeIcon
+                    : groupTypeIcon)}
+              </span>
+            </Tippy></h1>
             <p className="project-details-description">{project.description}</p>
             <div className="project-links">
               <div className="project-link">
