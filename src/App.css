@@ -352,6 +352,9 @@ button:focus-visible {
   font-style: italic;
   font-weight: 700;
 }
+.hero-subtitle-bold {
+  font-weight: 700;
+}
 
 .hero-buttons {
   display: flex;

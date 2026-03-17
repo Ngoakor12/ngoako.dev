@@ -1,4 +1,4 @@
-const GET_PROJECTS = `*[_type == "project"]{
+const GET_PROJECTS = `*[_type == "project"] | order(order asc){
   title,
   slug{current},
   description,
